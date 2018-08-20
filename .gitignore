@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/TriviaServer
+/TriviaServer/.vs/TriviaServer/v15
+/TriviaServer/TriviaServer/obj
