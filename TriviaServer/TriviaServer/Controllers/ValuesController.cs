@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TriviaServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/values")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -14,7 +14,7 @@ namespace TriviaServer.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2", "cucu bau" };
         }
 
         // GET api/values/5
