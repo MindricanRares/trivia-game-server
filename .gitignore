@@ -5,4 +5,5 @@
 /.vs/TriviaServer
 /TriviaServer/.vs/TriviaServer/v15
 /TriviaServer/TriviaServer/obj
+/TriviaServer/TriviaServer/bin
 /TriviaServer/.vs/TriviaServer/DesignTimeBuild
