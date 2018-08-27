@@ -6,3 +6,6 @@
 /TriviaServer/.vs/TriviaServer/v15
 /TriviaServer/TriviaServer/obj
 /TriviaServer/.vs/TriviaServer/DesignTimeBuild
+/TriviaServer/DataAccesLayer/obj
+/TriviaServer/DataAccesLayer/bin
+/TriviaServer/DataAccesLayer/bin/Debug
