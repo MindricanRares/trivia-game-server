@@ -5,12 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180828081556_Init.cs" />
+    <Compile Remove="Migrations\20180828081556_Init.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
 </Project>

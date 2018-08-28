@@ -7,5 +7,4 @@
 /TriviaServer/TriviaServer/obj
 /TriviaServer/TriviaServer/bin
 /TriviaServer/.vs/TriviaServer/DesignTimeBuild
-/TriviaServer/TriviaServer/bin
-
+/TriviaServer/TriviaServer/bin/Debug/netcoreapp2.1
