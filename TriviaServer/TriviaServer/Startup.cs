@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TriviaServer.DAO.Interfaces;
+using TriviaServer.DAO.Repositories;
 
 namespace TriviaServer
 {
@@ -31,6 +33,10 @@ namespace TriviaServer
 
             services.AddDbContext<ApplicationContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IGameRepository, GameRepository>();
+            services.AddTransient<IPlayerRepository, PlayerRepository>();
+            services.AddTransient<IQuestionRepository, QuestionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
