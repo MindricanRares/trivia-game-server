@@ -9,8 +9,8 @@ using TriviaServer;
 namespace TriviaServer.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20180828102938_init1")]
-    partial class init1
+    [Migration("20180829114116_initmigration")]
+    partial class initmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
