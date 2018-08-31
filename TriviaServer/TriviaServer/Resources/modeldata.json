@@ -1,129 +1,63 @@
 {
-  "categories": [
-    [
-      "Math",
-      "0%",
+  "categoryList":[
+    {
+      "categoryName":"Math",
+      "categoryUsage":0,
+      "questionList":[{
+        "questionText":"sadasdadssadafas?",
+        "correctAnswer":"asada",
+        "wrongAnswer1":"sdas",
+        "wrongAnswer2":"sdas",
+        "wrongAnswer3":"sdas"
+      },
       {
-        "questions": [
-          {
-            
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-           
-          },
-          {
-            
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-            
-          },
-          {
-           
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          },
-          {
-            
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          }
-        ]
-      }
-    ]
-      ,
-    [
-      "History",
-      "0%",
-      {
-        "questions": [
-          {
-           
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          },
-          {
-            
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          },
-          {
-           
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          },
-          {
-           
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          }
-        ]
-      }
-    ]
-      ,
-    [
-      "Sci-Fi",
-      "0%",
-      {
-        "questions": [
-          {
-            
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          },
-          {
-           
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          },
-          {
-            
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          },
-          {
-            
-            "questionText": "Bla bla Blabla Blab Bla?",
-            "correctAnswer": "abasabsabasa",
-            "wrongAnswer1": "a",
-            "wrongAnswer2": "b",
-            "wrongAnswer3": "c"
-          }
-        ]
-      }
+        "questionText":"sadasdadssadafas?",
+        "correctAnswer":"asada",
+        "wrongAnswer1":"sdas",
+        "wrongAnswer2":"sdas",
+        "wrongAnswer3":"sdas"
+      }]
+      
+    },
+    {
+      "categoryName": "Science",
+      "categoryUsage": 1,
+      "questionList": [
+        {
+          "questionText": "bbbbbbb?",
+          "correctAnswer": "abbbba",
+          "wrongAnswer1": "sdas",
+          "wrongAnswer2": "sdas",
+          "wrongAnswer3": "sdas"
+        },
+        {
+          "questionText": "sabsbsbs?",
+          "correctAnswer": "asada",
+          "wrongAnswer1": "sdas",
+          "wrongAnswer2": "sdas",
+          "wrongAnswer3": "sdas"
+
+        }
       ]
+    },
+    {
+      "categoryName":"Geography",
+      "categoryUsage":2,
+      "questionList":[{
+        "questionText":"ccccccc?",
+        "correctAnswer":"acc",
+        "wrongAnswer1":"abbbccc",
+        "wrongAnswer2":"adbbbccc",
+        "wrongAnswer3":"cc"
+      },
+      {
+        "questionText":"cccccccc?",
+        "correctAnswer":"ccc",
+        "wrongAnswer1":"scs",
+        "wrongAnswer2":"sccc",
+        "wrongAnswer3":"sdcccc"
+      }]
+    }
     
-  ]
+    ]
 }
