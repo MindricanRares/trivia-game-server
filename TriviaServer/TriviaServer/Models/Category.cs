@@ -11,5 +11,16 @@ namespace TriviaServer.Models
         public string CategoryName { get; set; }
         public int NumberOfUses { get; set; }
         public ICollection<Question> Questions { get; set; }
+
+        public Category()
+        {
+            Questions = new List<Question>();
+        }
+
+        public override string ToString()
+        {
+            return "Category: " + CategoryId + " " + CategoryName + "  " + NumberOfUses;
+        }
+
     }
 }
