@@ -13,5 +13,6 @@ namespace TriviaServer.DAO.Interfaces
         void Delete(int id);
         IEnumerable<Category> GetCategories();
         Category GetByID(int? id);
+        void PopulateCategories();
     }
 }
