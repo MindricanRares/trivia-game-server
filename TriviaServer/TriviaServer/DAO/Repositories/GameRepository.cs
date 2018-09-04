@@ -52,5 +52,19 @@ namespace TriviaServer.DAO.Repositories
 
             return game;
         }
+
+        public List<(String,int)> GetByGameRoomId(int gameRoomId)
+        {
+            var players = new List<(String, int)>();
+            //var gameRoom = _context.Games.Find(gameRoomId);
+            //foreach (Player p in gameRoom.Players)
+            //{
+            //    players.Add((p.PlayerName, p.PlayerScore));
+            //}
+            _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
+                .ForEach(a => players.Add((a.PlayerName, a.PlayerScore)));
+
+            return players;
+        }
     }
 }

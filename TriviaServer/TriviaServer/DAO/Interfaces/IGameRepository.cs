@@ -13,5 +13,6 @@ namespace TriviaServer.DAO.Interfaces
         void Delete(int id);
         IEnumerable<Game> GetGames();
         Game GetByID(int? id);
+        List<(String, int)> GetByGameRoomId(int gameRoomId);
     }
 }
