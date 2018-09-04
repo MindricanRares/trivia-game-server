@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TriviaServer.DAO.Interfaces;
 using TriviaServer.Models;
+using TriviaServer.PopulateSQL;
 
 namespace TriviaServer.DAO.Repositories
 {
@@ -51,6 +52,25 @@ namespace TriviaServer.DAO.Repositories
             var category = _context.Categories.SingleOrDefault(p => p.CategoryId == id);
 
             return category;
+        }
+
+        public void DeleteAllCategories()
+        {
+            var categories = GetCategories();
+            foreach (Category c in categories)
+            {
+                Delete(c.CategoryId);
+            }
+        }
+
+        public void PopulateCategories() {
+
+            DeleteAllCategories();
+            var categories = JSONConverter.ReadJsonFile();
+            foreach(Category c in categories)
+            {
+                Create(c);
+            }
         }
     }
 }
