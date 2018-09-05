@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TriviaServer.DAO.Interfaces;
+using TriviaServer.DAO.Utils;
 using TriviaServer.Models;
 
 namespace TriviaServer.DAO.Repositories
@@ -53,18 +54,36 @@ namespace TriviaServer.DAO.Repositories
             return game;
         }
 
-        public List<(String,int)> GetByGameRoomId(int gameRoomId)
+        public List<PlayerScore> GetPlayerAndScoreByGameRoomId(int gameRoomId)
         {
-            var players = new List<(String, int)>();
+            var players = new List<PlayerScore>();
             //var gameRoom = _context.Games.Find(gameRoomId);
             //foreach (Player p in gameRoom.Players)
             //{
             //    players.Add((p.PlayerName, p.PlayerScore));
             //}
             _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
-                .ForEach(a => players.Add((a.PlayerName, a.PlayerScore)));
+                .ForEach(a => players.Add(new PlayerScore() { Name = a.PlayerName, Score = a.PlayerScore }));
 
             return players;
+        }
+
+        public List<PlayerName> GetPlayersByRoomId(int gameRoomId)
+        {
+            var players = new List<PlayerName>();
+            _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
+                .ForEach(a => players.Add(new PlayerName() { Name = a.PlayerName}));
+            return players;
+        }
+
+        public double GetAverageScore(int gameRoomId)
+        {
+            double sum = 0;
+            _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
+                .ForEach(a => sum += a.PlayerScore);
+            var numberOfPlayers = GetPlayersByRoomId(gameRoomId).Count;
+            return sum / numberOfPlayers;
+
         }
     }
 }
