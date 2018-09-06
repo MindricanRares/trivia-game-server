@@ -15,6 +15,7 @@ namespace TriviaServer.Models
         public string WrongAnswer2 { get; set; }
         public string WrongAnswer3 { get; set; }
         public int CategoryId { get; set; }
+        public int QuestionDifficulty { get; set; }
         public Category Category { get; set; }
     }
 }

@@ -60,6 +60,7 @@ namespace TriviaServer.PopulateSQL
                         newquestion.WrongAnswer1 = jarray.SelectToken(string.Format("categoryList[{0}].questionList[{1}].wrongAnswer1", i, j)).ToString();
                         newquestion.WrongAnswer2 = jarray.SelectToken(string.Format("categoryList[{0}].questionList[{1}].wrongAnswer2", i, j)).ToString();
                         newquestion.WrongAnswer3 = jarray.SelectToken(string.Format("categoryList[{0}].questionList[{1}].wrongAnswer3", i, j)).ToString();
+                        newquestion.QuestionDifficulty = Int32.Parse(jarray.SelectToken(string.Format("categoryList[{0}].questionList[{1}].questionDifficulty", i, j)).ToString());
                         newCategory.Questions.Add(newquestion);
                     }
                     categoryList.Add(newCategory);

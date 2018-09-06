@@ -57,11 +57,6 @@ namespace TriviaServer.DAO.Repositories
         public List<PlayerScore> GetPlayerAndScoreByGameRoomId(int gameRoomId)
         {
             var players = new List<PlayerScore>();
-            //var gameRoom = _context.Games.Find(gameRoomId);
-            //foreach (Player p in gameRoom.Players)
-            //{
-            //    players.Add((p.PlayerName, p.PlayerScore));
-            //}
             _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
                 .ForEach(a => players.Add(new PlayerScore() { Name = a.PlayerName, Score = a.PlayerScore }));
 

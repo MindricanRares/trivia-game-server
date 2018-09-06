@@ -9,8 +9,8 @@ using TriviaServer;
 namespace TriviaServer.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20180829114116_initmigration")]
-    partial class initmigration
+    [Migration("20180906083830_I3")]
+    partial class I3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -76,6 +76,8 @@ namespace TriviaServer.Migrations
                     b.Property<int>("CategoryId");
 
                     b.Property<string>("CorrectAnswer");
+
+                    b.Property<int>("QuestionDifficulty");
 
                     b.Property<string>("QuestionText");
 
