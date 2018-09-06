@@ -32,9 +32,9 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPost]
-        public void Post(Player p)
+        public void Post([FromBody] Player player)
         {
-            _repo.Create(p);
+            _repo.Create(player);
         }
 
         [HttpDelete("{id}")]
@@ -48,5 +48,6 @@ namespace TriviaServer.Controllers.API
         {
             _repo.Edit(p);
         }
+
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TriviaServer.Migrations
 {
-    public partial class initmigration : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,7 +45,8 @@ namespace TriviaServer.Migrations
                     WrongAnswer1 = table.Column<string>(nullable: true),
                     WrongAnswer2 = table.Column<string>(nullable: true),
                     WrongAnswer3 = table.Column<string>(nullable: true),
-                    CategoryId = table.Column<int>(nullable: false)
+                    CategoryId = table.Column<int>(nullable: false),
+                    QuestionDifficulty = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

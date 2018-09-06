@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using TriviaServer.DAO.Interfaces;
 using TriviaServer.Models;
 
@@ -34,6 +35,34 @@ namespace TriviaServer.Controllers.API
         {
             var game = _repo.GetByID(id);
             return game;
+        }
+
+        [HttpGet("{gameRoomId}/players/score")]
+        public ActionResult GetPlayersAndScore(int gameRoomId)
+        {
+            var players = _repo.GetPlayerAndScoreByGameRoomId(gameRoomId);
+            return new JsonResult(players);
+        }
+
+        [HttpGet("{gameRoomId}/players")]
+        public ActionResult GetPlayersName(int gameRoomId)
+        {
+            var players = _repo.GetPlayersByRoomId(gameRoomId);
+            return new JsonResult(players);
+        }
+
+        [HttpGet("{gameRoomId}/players/number")]
+        public ActionResult GetNumberOfPlayers(int gameRoomId)
+        {
+            var players = _repo.GetPlayersByRoomId(gameRoomId);
+            return new JsonResult(players.Count);
+        }
+
+        [HttpGet("{gameRoomId}/statistics")]
+        public ActionResult GetStatistics(int gameRoomId)
+        {
+            var averageScore = _repo.GetAverageScore(gameRoomId);
+            return new JsonResult(averageScore);
         }
 
         [HttpPost]

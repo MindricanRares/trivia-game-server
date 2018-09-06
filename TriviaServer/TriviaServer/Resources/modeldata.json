@@ -8,15 +8,17 @@
         "correctAnswer":"asada",
         "wrongAnswer1":"sdas",
         "wrongAnswer2":"sdas",
-        "wrongAnswer3":"sdas"
+        "wrongAnswer3": "sdas",
+        "questionDifficulty": 1
       },
-      {
-        "questionText":"sadasdadssadafas?",
-        "correctAnswer":"asada",
-        "wrongAnswer1":"sdas",
-        "wrongAnswer2":"sdas",
-        "wrongAnswer3":"sdas"
-      }]
+        {
+          "questionText": "sadasdadssadafas?",
+          "correctAnswer": "asada",
+          "wrongAnswer1": "sdas",
+          "wrongAnswer2": "sdas",
+          "wrongAnswer3": "sdas",
+          "questionDifficulty": 1
+        }]
       
     },
     {
@@ -28,14 +30,16 @@
           "correctAnswer": "abbbba",
           "wrongAnswer1": "sdas",
           "wrongAnswer2": "sdas",
-          "wrongAnswer3": "sdas"
+          "wrongAnswer3": "sdas",
+          "questionDifficulty": 1
         },
         {
           "questionText": "sabsbsbs?",
           "correctAnswer": "asada",
           "wrongAnswer1": "sdas",
           "wrongAnswer2": "sdas",
-          "wrongAnswer3": "sdas"
+          "wrongAnswer3": "sdas",
+          "questionDifficulty": 1
 
         }
       ]
@@ -43,20 +47,24 @@
     {
       "categoryName":"Geography",
       "categoryUsage":2,
-      "questionList":[{
-        "questionText":"ccccccc?",
-        "correctAnswer":"acc",
-        "wrongAnswer1":"abbbccc",
-        "wrongAnswer2":"adbbbccc",
-        "wrongAnswer3":"cc"
-      },
-      {
-        "questionText":"cccccccc?",
-        "correctAnswer":"ccc",
-        "wrongAnswer1":"scs",
-        "wrongAnswer2":"sccc",
-        "wrongAnswer3":"sdcccc"
-      }]
+      "questionList": [
+        {
+          "questionText": "ccccccc?",
+          "correctAnswer": "acc",
+          "wrongAnswer1": "abbbccc",
+          "wrongAnswer2": "adbbbccc",
+          "wrongAnswer3": "cc",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "cccccccc?",
+          "correctAnswer": "ccc",
+          "wrongAnswer1": "scs",
+          "wrongAnswer2": "sccc",
+          "wrongAnswer3": "sdcccc",
+          "questionDifficulty": 1
+        }
+      ]
     }
     
     ]

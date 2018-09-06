@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TriviaServer.DAO.Interfaces;
+using TriviaServer.DAO.Utils;
 using TriviaServer.Models;
 
 namespace TriviaServer.DAO.Repositories
@@ -51,6 +52,33 @@ namespace TriviaServer.DAO.Repositories
             var game = _context.Games.SingleOrDefault(p => p.GameId == id);
 
             return game;
+        }
+
+        public List<PlayerScore> GetPlayerAndScoreByGameRoomId(int gameRoomId)
+        {
+            var players = new List<PlayerScore>();
+            _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
+                .ForEach(a => players.Add(new PlayerScore() { Name = a.PlayerName, Score = a.PlayerScore }));
+
+            return players;
+        }
+
+        public List<PlayerName> GetPlayersByRoomId(int gameRoomId)
+        {
+            var players = new List<PlayerName>();
+            _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
+                .ForEach(a => players.Add(new PlayerName() { Name = a.PlayerName}));
+            return players;
+        }
+
+        public double GetAverageScore(int gameRoomId)
+        {
+            double sum = 0;
+            _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
+                .ForEach(a => sum += a.PlayerScore);
+            var numberOfPlayers = GetPlayersByRoomId(gameRoomId).Count;
+            return sum / numberOfPlayers;
+
         }
     }
 }
