@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TriviaServer.DAO.Interfaces;
+using TriviaServer.DAO.Utils;
 using TriviaServer.Models;
 
 namespace TriviaServer.Controllers.API
@@ -35,6 +36,12 @@ namespace TriviaServer.Controllers.API
         public void Post([FromBody] Player player)
         {
             _repo.Create(player);
+        }
+
+        [HttpPost("updatescore")]
+        public void UpdatePlayerScore([FromBody] PlayerScore player)
+        {
+            _repo.UpdatePlayerScore(player.GameroomId, player.Name, player.Score);
         }
 
         [HttpDelete("{id}")]

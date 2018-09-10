@@ -11,7 +11,7 @@ namespace TriviaServer.DAO.Repositories
     public class GameRepository : IGameRepository
     {
         private ApplicationContext _context;
-
+        
         public GameRepository(ApplicationContext context)
         {
             _context = context;
@@ -58,7 +58,7 @@ namespace TriviaServer.DAO.Repositories
         {
             var players = new List<PlayerScore>();
             _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
-                .ForEach(a => players.Add(new PlayerScore() { Name = a.PlayerName, Score = a.PlayerScore }));
+                .ForEach(a => players.Add(new PlayerScore() { Name = a.PlayerName, Score = a.PlayerScore, GameroomId = a.GameroomId }));
 
             return players;
         }
@@ -78,7 +78,24 @@ namespace TriviaServer.DAO.Repositories
                 .ForEach(a => sum += a.PlayerScore);
             var numberOfPlayers = GetPlayersByRoomId(gameRoomId).Count;
             return sum / numberOfPlayers;
-
         }
+
+        public List<QuestionAnswers> GetQuestionsAndAnswersByGameRoomId(int gameRoomId)
+        {
+            var questions = new List<QuestionAnswers>();
+            var categories = new List<Category>();
+            _context.Categories.Where(a => a.GameroomId == gameRoomId).ToList()
+                .ForEach(a => categories.Add(a));
+            foreach(Category c in categories)
+            {
+                _context.Questions.Where(a => a.CategoryId == c.CategoryId).ToList()
+                    .ForEach(a => questions.Add(new QuestionAnswers() { QuestionText=a.QuestionText ,
+                        CorrectAnswer = a.CorrectAnswer, WrongAnswer1=a.WrongAnswer1, WrongAnswer2=a.WrongAnswer2
+                    ,WrongAnswer3=a.WrongAnswer3}));
+            }
+            return questions;
+        }
+
+     
     }
 }

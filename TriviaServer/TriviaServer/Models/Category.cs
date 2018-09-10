@@ -10,7 +10,9 @@ namespace TriviaServer.Models
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public int NumberOfUses { get; set; }
+        public int GameroomId { get; set; }
         public ICollection<Question> Questions { get; set; }
+        public ICollection<CategoryGame> CategoryGames { get; set; }
 
         public Category()
         {
