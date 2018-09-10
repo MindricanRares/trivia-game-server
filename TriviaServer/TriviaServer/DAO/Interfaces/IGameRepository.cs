@@ -17,5 +17,6 @@ namespace TriviaServer.DAO.Interfaces
         List<PlayerScore> GetPlayerAndScoreByGameRoomId(int gameRoomId);
         List<PlayerName> GetPlayersByRoomId(int gameRoomId);
         double GetAverageScore(int gameRoomId);
+        List<QuestionAnswers> GetQuestionsAndAnswersByGameRoomId(int gameRoomId);
     }
 }

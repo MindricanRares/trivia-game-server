@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TriviaServer.DAO.Interfaces;
+using TriviaServer.DAO.Utils;
 using TriviaServer.Models;
 
 namespace TriviaServer.DAO.Repositories
@@ -51,6 +52,14 @@ namespace TriviaServer.DAO.Repositories
             var player = _context.Players.SingleOrDefault(p => p.PlayerId == id);
 
             return player;
+        }
+
+        public void UpdatePlayerScore(int gameRoomId, String playerName, int score)
+        {
+            var player = _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
+                .Where(a => a.PlayerName == playerName).First();
+            player.PlayerScore += score;
+            Edit(player);
         }
     }
 }

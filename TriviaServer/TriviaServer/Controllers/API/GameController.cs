@@ -65,6 +65,14 @@ namespace TriviaServer.Controllers.API
             return new JsonResult(averageScore);
         }
 
+        [HttpGet("{gameRoomId}/questions")]
+        public ActionResult GetQuestionsAndAnswers(int gameRoomId)
+        {
+            var questions = _repo.GetQuestionsAndAnswersByGameRoomId(gameRoomId);
+            return new JsonResult(questions);
+        }
+
+
         [HttpPost]
         public void Post(Game g)
         {

@@ -13,5 +13,6 @@ namespace TriviaServer.DAO.Interfaces
         void Delete(int id);
         IEnumerable<Player> GetPlayers();
         Player GetByID(int? id);
+        void UpdatePlayerScore(int gameRoomId, String playerName, int score);
     }
 }

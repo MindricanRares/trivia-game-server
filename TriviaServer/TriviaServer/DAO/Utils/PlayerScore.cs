@@ -9,5 +9,6 @@ namespace TriviaServer.DAO.Utils
     {
         public String Name { get; set; }
         public int Score { get; set; }
+        public int GameroomId { get; set; }
     }
 }

@@ -28,6 +28,19 @@ namespace TriviaServer
                 .WithMany(b => b.Players)
                 .HasForeignKey(p => p.GameroomId)
                 .HasConstraintName("ForeignKey_Player_Game");
+
+                modelBuilder.Entity<CategoryGame>()
+                .HasKey(cg => new { cg.GameId, cg.CategoryId });
+
+                 modelBuilder.Entity<CategoryGame>()
+                .HasOne(g => g.Game)
+                .WithMany(b => b.CategoryGames)
+                .HasForeignKey(bc => bc.GameId);
+
+                 modelBuilder.Entity<CategoryGame>()
+                .HasOne(bc => bc.Category)
+                .WithMany(c => c.CategoryGames)
+                .HasForeignKey(bc => bc.CategoryId);
         }
 
 
