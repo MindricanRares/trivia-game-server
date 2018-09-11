@@ -20,34 +20,73 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Player>> Get()
+        public ActionResult<IEnumerable<Player>> GetPlayers()
         {
-            return _repo.GetPlayers().ToList();
+            try
+            {
+                var players = _repo.GetPlayers().ToList();
+                return new JsonResult(players);
+            }
+          catch
+            {
+                return BadRequest("No player was found!");
+            }
         }
 
         [HttpGet("{id}")]
         public ActionResult<Player> Get(int id)
         {
-            var player = _repo.GetByID(id);
-            return player;
+            try
+            {
+                var player = _repo.GetByID(id);
+                return new JsonResult(player);
+            }
+           catch
+            {
+                return BadRequest("Player with id " + id + " not found!" );
+            }
         }
 
         [HttpPost]
-        public void Post([FromBody] Player player)
+        public ActionResult Post([FromBody] Player player)
         {
-            _repo.Create(player);
+            try
+            {
+                _repo.Create(player);
+                return Ok(player);
+            }
+            catch
+            {
+                return BadRequest(player);
+            }
         }
 
         [HttpPost("updatescore")]
-        public void UpdatePlayerScore([FromBody] PlayerScore player)
+        public ActionResult UpdatePlayerScore([FromBody] PlayerScore player)
         {
-            _repo.UpdatePlayerScore(player.GameroomId, player.Name, player.Score);
+            try
+            {
+                _repo.UpdatePlayerScore(player.GameroomId, player.Name, player.Score);
+                return Ok(player);
+            }
+            catch
+            {
+                return BadRequest(player);
+            }
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
-            _repo.Delete(id);
+            try
+            {
+                _repo.Delete(id);
+                return Ok("Player was succesfully deleted.");
+            }
+            catch
+            {
+                return BadRequest("Player with id " + id + " not found!");
+            }
         }
 
         [HttpPut]

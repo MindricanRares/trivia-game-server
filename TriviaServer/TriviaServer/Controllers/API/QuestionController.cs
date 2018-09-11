@@ -21,26 +21,61 @@ namespace TriviaServer.Controllers.API
         [HttpGet]
         public ActionResult<IEnumerable<Question>> Get()
         {
-            return _repo.GetQuestions().ToList();
+            try
+            {
+                var questions = _repo.GetQuestions().ToList();
+                return new JsonResult(questions);
+            }
+            catch
+            {
+                return BadRequest("No question was found!");
+            }
+
         }
 
         [HttpGet("{id}")]
         public ActionResult<Question> Get(int id)
         {
-            var question = _repo.GetByID(id);
-            return question;
+            try
+            {
+                var question = _repo.GetByID(id);
+                return new JsonResult(question);
+            }
+            catch
+            {
+                return BadRequest("Question not found!");
+            }
+         
         }
 
         [HttpPost]
-        public void Post(Question q)
+        public ActionResult Post(Question q)
         {
-            _repo.Create(q);
+            try
+            {
+                _repo.Create(q);
+                return Ok("Question succesfully added.");
+            }
+            catch
+            {
+                return BadRequest("Question already exists!");
+            }
+           
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
-            _repo.Delete(id);
+            try
+            {
+                _repo.Delete(id);
+                return Ok("Question succesfully deleted.");
+            }
+            catch
+            {
+                return BadRequest("Question not found!");
+            }
+
         }
 
         [HttpPut]

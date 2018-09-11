@@ -18,8 +18,17 @@ namespace TriviaServer.DAO.Repositories
 
         public void Create(Question q)
         {
-            _context.Questions.Add(q);
-            _context.SaveChanges();
+            if(_context.Questions.Where(a => a.CategoryId == q.CategoryId)
+                .Where(a => a.QuestionText == q.QuestionText).SingleOrDefault() != null)
+            {
+                _context.Questions.Add(q);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Question already exists!");
+            }
+           
         }
 
         public void Edit(Question q)
@@ -31,14 +40,30 @@ namespace TriviaServer.DAO.Repositories
         public void Delete(int id)
         {
             var question = _context.Questions.SingleOrDefault(x => x.QuestionId == id);
-            _context.Questions.Remove(question);
-            _context.SaveChanges();
+            if(question != null)
+            {
+                _context.Questions.Remove(question);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Question not found!");
+            }
+
         }
 
         public IEnumerable<Question> GetQuestions()
         {
             var questions = _context.Questions.ToList();
-            return questions;
+            if(questions != null)
+            {
+                return questions;
+            }
+            else
+            {
+                throw new Exception("No question was found!");
+            }
+   
         }
 
         public Question GetByID(int? id)
@@ -49,8 +74,16 @@ namespace TriviaServer.DAO.Repositories
             }
 
             var question = _context.Questions.SingleOrDefault(p => p.QuestionId == id);
+            if(question != null)
+            {
+                return question;
+            }
+            else
+            {
+                throw new Exception("Question not found!");
+            }
 
-            return question;
+  
         }
     }
 }

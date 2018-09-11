@@ -19,8 +19,16 @@ namespace TriviaServer.DAO.Repositories
 
         public void Create(Category c)
         {
-            _context.Categories.Add(c);
-            _context.SaveChanges();
+            if(_context.Categories.Where(a => a.CategoryName == c.CategoryName).SingleOrDefault() != null)
+            {
+                _context.Categories.Add(c);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Category already exists!");
+            }
+          
         }
 
         public void Edit(Category c)
@@ -32,14 +40,30 @@ namespace TriviaServer.DAO.Repositories
         public void Delete(int id)
         {
             var category = _context.Categories.SingleOrDefault(x => x.CategoryId == id);
-            _context.Categories.Remove(category);
-            _context.SaveChanges();
+            if(category != null)
+            {
+                _context.Categories.Remove(category);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("No category was found!");
+            }
+          
         }
 
         public IEnumerable<Category> GetCategories()
         {
             var categories = _context.Categories.ToList();
-            return categories;
+            if(categories != null)
+            {
+                return categories;
+            }
+            else
+            {
+                throw new Exception("No category was found!");
+            }
+            
         }
 
         public Category GetByID(int? id)
@@ -50,8 +74,15 @@ namespace TriviaServer.DAO.Repositories
             }
 
             var category = _context.Categories.SingleOrDefault(p => p.CategoryId == id);
-
-            return category;
+            if (category != null)
+            {
+                return category;
+            }
+            else
+            {
+                throw new Exception("Category not found!");
+            }
+               
         }
 
         public void DeleteAllCategories()
@@ -60,6 +91,7 @@ namespace TriviaServer.DAO.Repositories
             foreach (Category c in categories)
             {
                 Delete(c.CategoryId);
+
             }
         }
 
