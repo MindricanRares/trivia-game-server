@@ -37,6 +37,13 @@ namespace TriviaServer
             services.AddTransient<IGameRepository, GameRepository>();
             services.AddTransient<IPlayerRepository, PlayerRepository>();
             services.AddTransient<IQuestionRepository, QuestionRepository>();
+
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +61,7 @@ namespace TriviaServer
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseCors("MyPolicy");
         }
     }
 }
