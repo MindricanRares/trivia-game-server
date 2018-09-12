@@ -12,11 +12,6 @@ namespace TriviaServer.Controllers.API
     [Route("api/game")]
     public class GameController : Controller
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
         private readonly IGameRepository _repo;
 
         public GameController(IGameRepository repo)
@@ -27,68 +22,133 @@ namespace TriviaServer.Controllers.API
         [HttpGet]
         public ActionResult<IEnumerable<Game>> Get()
         {
-            return _repo.GetGames().ToList();
+            try
+            {
+                var games = _repo.GetGames().ToList();
+                return new JsonResult(games);
+            }
+           catch
+            {
+                return BadRequest("No game was found!");
+            }
         }
 
         [HttpGet("{id}")]
         public ActionResult<Game> Get(int id)
         {
-            var game = _repo.GetByID(id);
-            return game;
+            try
+            {
+                var game = _repo.GetByID(id);
+                return new JsonResult(game);
+            }
+            catch
+            {
+                return BadRequest("GameRoom not found!");
+            }
         }
 
         [HttpGet("{gameRoomId}/players/score")]
         public ActionResult GetPlayersAndScore(int gameRoomId)
         {
-            var players = _repo.GetPlayerAndScoreByGameRoomId(gameRoomId);
-            return new JsonResult(players);
+            try
+            {
+                var players = _repo.GetPlayerAndScoreByGameRoomId(gameRoomId);
+                return new JsonResult(players);
+            }
+            catch
+            {
+                return BadRequest("Gameroom " + gameRoomId + " not found!");
+            }
         }
 
         [HttpGet("{gameRoomId}/players")]
         public ActionResult GetPlayersName(int gameRoomId)
         {
-            var players = _repo.GetPlayersByRoomId(gameRoomId);
-            return new JsonResult(players);
+            try
+            {
+                var players = _repo.GetPlayersByRoomId(gameRoomId);
+                return new JsonResult(players);
+            }
+            catch
+            {
+                return BadRequest("Gameroom " + gameRoomId + " not found!");
+            }
         }
 
         [HttpGet("{gameRoomId}/players/number")]
         public ActionResult GetNumberOfPlayers(int gameRoomId)
         {
-            var players = _repo.GetPlayersByRoomId(gameRoomId);
-            return new JsonResult(players.Count);
+            try
+            {
+                var players = _repo.GetPlayersByRoomId(gameRoomId);
+                return new JsonResult(players.Count);
+            }
+            catch
+            {
+                return BadRequest("Gameroom " + gameRoomId + " not found!");
+            }
         }
 
         [HttpGet("{gameRoomId}/statistics")]
         public ActionResult GetStatistics(int gameRoomId)
         {
-            var averageScore = _repo.GetAverageScore(gameRoomId);
-            return new JsonResult(averageScore);
+            try
+            {
+                var averageScore = _repo.GetAverageScore(gameRoomId);
+                return new JsonResult(averageScore);
+            }
+            catch
+            {
+                return BadRequest("Gameroom " + gameRoomId + " not found!");
+            }
         }
 
         [HttpGet("{gameRoomId}/questions")]
         public ActionResult GetQuestionsAndAnswers(int gameRoomId)
         {
-            var questions = _repo.GetQuestionsAndAnswersByGameRoomId(gameRoomId);
-            return new JsonResult(questions);
+            try
+            {
+                var questions = _repo.GetQuestionsAndAnswersByGameRoomId(gameRoomId);
+                return new JsonResult(questions);
+            }
+            catch
+            {
+                return BadRequest("Gameroom " + gameRoomId + " not found!");
+            }
         }
 
-
         [HttpPost]
-        public void Post(Game g)
+        public ActionResult Post(Game game)
         {
-            _repo.Create(g);
+            try
+            {
+                _repo.Create(game);
+                return Ok(game);
+            }
+            catch
+            {
+                return BadRequest(game);
+            }
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
-            _repo.Delete(id);
+            try
+            {
+                _repo.Delete(id);
+                return Ok("Game succesfully deleted.");
+            }
+            catch
+            {
+                return BadRequest("Game not found!");
+            }
         }
 
         [HttpPut]
-        public void Put(Game g)
+        public void Put(Game game)
         {
-            _repo.Edit(g);
+            _repo.Edit(game);
         }
     }
 }

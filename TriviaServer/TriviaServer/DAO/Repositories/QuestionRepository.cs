@@ -16,29 +16,51 @@ namespace TriviaServer.DAO.Repositories
             _context = context;
         }
 
-        public void Create(Question q)
+        public void Create(Question question)
         {
-            _context.Questions.Add(q);
-            _context.SaveChanges();
+            if(_context.Questions.Where(a => a.CategoryId == question.CategoryId)
+                .Where(a => a.QuestionText == question.QuestionText).SingleOrDefault() != null)
+            {
+                _context.Questions.Add(question);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Question already exists!");
+            }
         }
 
-        public void Edit(Question q)
+        public void Edit(Question question)
         {
-            _context.Questions.Update(q);
+            _context.Questions.Update(question);
             _context.SaveChanges();
         }
 
         public void Delete(int id)
         {
             var question = _context.Questions.SingleOrDefault(x => x.QuestionId == id);
-            _context.Questions.Remove(question);
-            _context.SaveChanges();
+            if(question != null)
+            {
+                _context.Questions.Remove(question);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Question not found!");
+            }
         }
 
         public IEnumerable<Question> GetQuestions()
         {
             var questions = _context.Questions.ToList();
-            return questions;
+            if(questions != null)
+            {
+                return questions;
+            }
+            else
+            {
+                throw new Exception("No question was found!");
+            }
         }
 
         public Question GetByID(int? id)
@@ -47,10 +69,15 @@ namespace TriviaServer.DAO.Repositories
             {
                 return null;
             }
-
             var question = _context.Questions.SingleOrDefault(p => p.QuestionId == id);
-
-            return question;
+            if(question != null)
+            {
+                return question;
+            }
+            else
+            {
+                throw new Exception("Question not found!");
+            }
         }
     }
 }

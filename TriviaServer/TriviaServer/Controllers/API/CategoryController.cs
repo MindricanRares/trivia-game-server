@@ -11,11 +11,6 @@ namespace TriviaServer.Controllers.API
     [Route("api/category")]
     public class CategoryController : Controller
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
         private readonly ICategoryRepository _repo;
 
         public CategoryController(ICategoryRepository repo)
@@ -26,21 +21,44 @@ namespace TriviaServer.Controllers.API
         [HttpGet]
         public ActionResult<IEnumerable<Category>> Get()
         {
-            return _repo.GetCategories().ToList();
+            try
+            {
+                var categories = _repo.GetCategories().ToList();
+                return new JsonResult(categories);
+
+            }
+            catch
+            {
+                return BadRequest("No category was found!");
+            }
         }
 
         [HttpGet("{id}")]
         public ActionResult<Category> Get(int id)
         {
-            var category = _repo.GetByID(id);
-            return category;
+            try
+            {
+                var category = _repo.GetByID(id);
+                return new JsonResult(category);
+            }
+            catch
+            {
+                return BadRequest("No category was found!");
+            }
         }
 
-
         [HttpPost]
-        public void Post(Category c)
+        public ActionResult Post(Category category)
         {
-            _repo.Create(c);
+            try
+            {
+                _repo.Create(category);
+                return Ok("Category succcesfully added.");
+            }
+            catch
+            {
+                return BadRequest("Category already exists!");
+            }
         }
 
         [HttpPost("refresh")]
@@ -50,15 +68,23 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
-            _repo.Delete(id);
+            try
+            {
+                _repo.Delete(id);
+                return Ok("Category succesfully deleted.");
+            }
+            catch
+            {
+                return BadRequest("Category not found!");
+            }
         }
 
         [HttpPut]
-        public void Put(Category c)
+        public void Put(Category category)
         {
-            _repo.Edit(c);
+            _repo.Edit(category);
         }
     }
 }
