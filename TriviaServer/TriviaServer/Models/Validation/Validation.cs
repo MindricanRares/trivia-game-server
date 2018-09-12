@@ -10,9 +10,9 @@ namespace TriviaServer.DAO.Utils
     {
         public static Boolean CreatePlayerValidation(ICollection<Player> players, Player player)
         {
-            foreach(Player p in players)
+            foreach(Player playerItem in players)
             {
-                if (player.PlayerName == p.PlayerName)
+                if (player.PlayerName == playerItem.PlayerName)
                     return false;
             }
             return true;
@@ -20,9 +20,9 @@ namespace TriviaServer.DAO.Utils
 
         public static Boolean UpdateScoreValidation(ICollection<Player> players, String playerName)
         {
-            foreach(Player p in players)
+            foreach(Player player in players)
             {
-                if(p.PlayerName == playerName)
+                if(player.PlayerName == playerName)
                 {
                     return true;
                 }

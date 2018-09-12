@@ -31,7 +31,6 @@ namespace TriviaServer.Controllers.API
             {
                 return BadRequest("No game was found!");
             }
-             
         }
 
         [HttpGet("{id}")]
@@ -46,7 +45,6 @@ namespace TriviaServer.Controllers.API
             {
                 return BadRequest("GameRoom not found!");
             }
-            
         }
 
         [HttpGet("{gameRoomId}/players/score")]
@@ -89,7 +87,6 @@ namespace TriviaServer.Controllers.API
             {
                 return BadRequest("Gameroom " + gameRoomId + " not found!");
             }
-       
         }
 
         [HttpGet("{gameRoomId}/statistics")]
@@ -121,16 +118,16 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPost]
-        public ActionResult Post(Game g)
+        public ActionResult Post(Game game)
         {
             try
             {
-                _repo.Create(g);
-                return Ok(g);
+                _repo.Create(game);
+                return Ok(game);
             }
             catch
             {
-                return BadRequest(g);
+                return BadRequest(game);
             }
         }
 
@@ -149,9 +146,9 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPut]
-        public void Put(Game g)
+        public void Put(Game game)
         {
-            _repo.Edit(g);
+            _repo.Edit(game);
         }
     }
 }

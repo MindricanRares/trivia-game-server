@@ -17,11 +17,11 @@ namespace TriviaServer.DAO.Repositories
             _context = context;
         }
 
-        public void Create(Game g)
+        public void Create(Game game)
         {
-            if (_context.Games.Where(a => a.UniqueKey == g.UniqueKey).SingleOrDefault() != null)
+            if (_context.Games.Where(a => a.UniqueKey == game.UniqueKey).SingleOrDefault() != null)
             {
-                _context.Games.Add(g);
+                _context.Games.Add(game);
                 _context.SaveChanges();
             }
             else
@@ -30,9 +30,9 @@ namespace TriviaServer.DAO.Repositories
             }
         }
 
-        public void Edit(Game g)
+        public void Edit(Game game)
         {
-            _context.Games.Update(g);
+            _context.Games.Update(game);
             _context.SaveChanges();
         }
 
@@ -48,7 +48,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("Gameroom not found!");
             }
-       
         }
 
         public IEnumerable<Game> GetGames()
@@ -62,7 +61,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("No game was found!");
             }
-           
         }
 
         public Game GetByID(int? id)
@@ -71,7 +69,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 return null;
             }
-
             var game = _context.Games.SingleOrDefault(p => p.GameId == id);
             if (game != null)
             {
@@ -81,7 +78,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("Gameroom not found!");
             }
-               
         }
 
         public List<PlayerScore> GetPlayerAndScoreByGameRoomId(int gameRoomId)
@@ -98,7 +94,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("Gameroom not found!");
             }
-            
         }
 
         public List<PlayerName> GetPlayersByRoomId(int gameRoomId)
@@ -114,7 +109,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("Gameroom not found!");
             }
-
         }
 
         public double GetAverageScore(int gameRoomId)
@@ -132,7 +126,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("Gameroom not found!");
             }
-           
         }
 
         public List<QuestionAnswers> GetQuestionsAndAnswersByGameRoomId(int gameRoomId)
@@ -152,8 +145,7 @@ namespace TriviaServer.DAO.Repositories
                             QuestionText = a.QuestionText,
                             CorrectAnswer = a.CorrectAnswer,
                             WrongAnswer1 = a.WrongAnswer1,
-                            WrongAnswer2 = a.WrongAnswer2
-                        ,
+                            WrongAnswer2 = a.WrongAnswer2,
                             WrongAnswer3 = a.WrongAnswer3
                         }));
                 }
@@ -163,9 +155,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("Gameroom not found!");
             }
-            
         }
-
-     
     }
 }

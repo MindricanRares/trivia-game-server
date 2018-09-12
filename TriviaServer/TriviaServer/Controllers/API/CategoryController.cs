@@ -31,7 +31,6 @@ namespace TriviaServer.Controllers.API
             {
                 return BadRequest("No category was found!");
             }
-             
         }
 
         [HttpGet("{id}")]
@@ -46,22 +45,20 @@ namespace TriviaServer.Controllers.API
             {
                 return BadRequest("No category was found!");
             }
-      
         }
 
         [HttpPost]
-        public ActionResult Post(Category c)
+        public ActionResult Post(Category category)
         {
             try
             {
-                _repo.Create(c);
+                _repo.Create(category);
                 return Ok("Category succcesfully added.");
             }
             catch
             {
                 return BadRequest("Category already exists!");
             }
-            
         }
 
         [HttpPost("refresh")]
@@ -85,9 +82,9 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPut]
-        public void Put(Category c)
+        public void Put(Category category)
         {
-            _repo.Edit(c);
+            _repo.Edit(category);
         }
     }
 }

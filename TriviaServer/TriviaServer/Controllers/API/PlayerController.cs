@@ -90,9 +90,9 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPut]
-        public void Put(Player p)
+        public void Put(Player player)
         {
-            _repo.Edit(p);
+            _repo.Edit(player);
         }
 
     }

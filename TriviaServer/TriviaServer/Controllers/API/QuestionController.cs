@@ -30,7 +30,6 @@ namespace TriviaServer.Controllers.API
             {
                 return BadRequest("No question was found!");
             }
-
         }
 
         [HttpGet("{id}")]
@@ -45,22 +44,20 @@ namespace TriviaServer.Controllers.API
             {
                 return BadRequest("Question not found!");
             }
-         
         }
 
         [HttpPost]
-        public ActionResult Post(Question q)
+        public ActionResult Post(Question question)
         {
             try
             {
-                _repo.Create(q);
+                _repo.Create(question);
                 return Ok("Question succesfully added.");
             }
             catch
             {
                 return BadRequest("Question already exists!");
             }
-           
         }
 
         [HttpDelete("{id}")]
@@ -75,13 +72,12 @@ namespace TriviaServer.Controllers.API
             {
                 return BadRequest("Question not found!");
             }
-
         }
 
         [HttpPut]
-        public void Put(Question q)
+        public void Put(Question question)
         {
-            _repo.Edit(q);
+            _repo.Edit(question);
         }
     }
 }

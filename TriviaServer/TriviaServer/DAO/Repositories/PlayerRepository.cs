@@ -18,24 +18,23 @@ namespace TriviaServer.DAO.Repositories
             _context = context;
         }
 
-        public void Create(Player p)
+        public void Create(Player player)
         {
-            var players = _context.Players.Where(a => a.GameroomId == p.GameroomId).ToList();
-            if (Validation.CreatePlayerValidation(players,p))
+            var players = _context.Players.Where(a => a.GameroomId == player.GameroomId).ToList();
+            if (Validation.CreatePlayerValidation(players,player))
             {
-                _context.Players.Add(p);
+                _context.Players.Add(player);
                 _context.SaveChanges();
             }
             else
             {
                 throw new Exception("Nume deja existent!");
             }
-
         }
 
-        public void Edit(Player p)
+        public void Edit(Player player)
         {
-            _context.Players.Update(p);
+            _context.Players.Update(player);
             _context.SaveChanges();
         }
 
@@ -51,7 +50,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("Player not found!");
             }
-          
         }
 
         public IEnumerable<Player> GetPlayers()
@@ -65,7 +63,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("No player was found!");
             }
- 
         }
 
         public Player GetByID(int? id)
@@ -83,7 +80,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("Player not found!");
             }
-             
         }
 
         public void UpdatePlayerScore(int gameRoomId, String playerName, int score)
@@ -100,7 +96,6 @@ namespace TriviaServer.DAO.Repositories
             {
                 throw new Exception("Player not found!");
             }
-            
         }
     }
 }
