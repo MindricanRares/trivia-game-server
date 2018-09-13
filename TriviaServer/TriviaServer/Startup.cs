@@ -28,6 +28,19 @@ namespace TriviaServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials();
+                    });
+            });
+
             // services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMvc();
 
@@ -38,12 +51,6 @@ namespace TriviaServer
             services.AddTransient<IPlayerRepository, PlayerRepository>();
             services.AddTransient<IQuestionRepository, QuestionRepository>();
 
-            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
-            {
-                builder.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader();
-            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,8 +67,9 @@ namespace TriviaServer
            // app.UseMvc(ConfigureRoutes);
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
             app.UseMvc();
-            app.UseCors("MyPolicy");
+           
         }
     }
 }
