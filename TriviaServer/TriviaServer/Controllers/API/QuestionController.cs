@@ -52,7 +52,7 @@ namespace TriviaServer.Controllers.API
             try
             {
                 _repo.Create(question);
-                return Ok("Question succesfully added.");
+                return Ok("Question successfully added.");
             }
             catch
             {
@@ -66,7 +66,7 @@ namespace TriviaServer.Controllers.API
             try
             {
                 _repo.Delete(id);
-                return Ok("Question succesfully deleted.");
+                return Ok("Question successfully deleted.");
             }
             catch
             {

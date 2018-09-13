@@ -53,7 +53,7 @@ namespace TriviaServer.Controllers.API
             try
             {
                 _repo.Create(category);
-                return Ok("Category succcesfully added.");
+                return Ok("Category successfully added.");
             }
             catch
             {
@@ -73,7 +73,7 @@ namespace TriviaServer.Controllers.API
             try
             {
                 _repo.Delete(id);
-                return Ok("Category succesfully deleted.");
+                return Ok("Category successfully deleted.");
             }
             catch
             {

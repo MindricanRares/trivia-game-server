@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TriviaServer.Controllers.API;
 using TriviaServer.DAO.Interfaces;
 using TriviaServer.DAO.Repositories;
 
@@ -37,6 +38,7 @@ namespace TriviaServer
             services.AddTransient<IGameRepository, GameRepository>();
             services.AddTransient<IPlayerRepository, PlayerRepository>();
             services.AddTransient<IQuestionRepository, QuestionRepository>();
+            services.AddTransient<ICategoryGame, CategoryGameRepository>();
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {

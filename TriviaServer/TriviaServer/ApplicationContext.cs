@@ -13,6 +13,8 @@ namespace TriviaServer
         public DbSet<Category> Categories { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<Game> Games { get; set; }
+        public DbSet<CategoryGame> CategoryGames { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,7 +31,7 @@ namespace TriviaServer
                 .HasForeignKey(p => p.GameroomId)
                 .HasConstraintName("ForeignKey_Player_Game");
 
-                modelBuilder.Entity<CategoryGame>()
+                 modelBuilder.Entity<CategoryGame>()
                 .HasKey(cg => new { cg.GameId, cg.CategoryId });
 
                  modelBuilder.Entity<CategoryGame>()
