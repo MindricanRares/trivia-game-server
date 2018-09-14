@@ -81,7 +81,7 @@ namespace TriviaServer.Controllers.API
             try
             {
                 _repo.Delete(id);
-                return Ok("Player was succesfully deleted.");
+                return Ok("Player was successfully deleted.");
             }
             catch
             {

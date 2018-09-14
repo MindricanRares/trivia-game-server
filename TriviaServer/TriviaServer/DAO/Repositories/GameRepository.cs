@@ -135,7 +135,7 @@ namespace TriviaServer.DAO.Repositories
             {
                 var questions = new List<QuestionAnswers>();
                 var categories = new List<Category>();
-                _context.Categories.Where(a => a.GameroomId == gameRoomId).ToList()
+                _context.CategoryGames.Where(a => a.GameId == gameRoomId).Select(a => a.Category).ToList()
                     .ForEach(a => categories.Add(a));
                 foreach (Category c in categories)
                 {

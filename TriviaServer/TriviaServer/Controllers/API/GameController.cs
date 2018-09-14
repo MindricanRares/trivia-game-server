@@ -137,7 +137,7 @@ namespace TriviaServer.Controllers.API
             try
             {
                 _repo.Delete(id);
-                return Ok("Game succesfully deleted.");
+                return Ok("Game successfully deleted.");
             }
             catch
             {

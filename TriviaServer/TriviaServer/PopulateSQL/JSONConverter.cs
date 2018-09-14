@@ -50,7 +50,7 @@ namespace TriviaServer.PopulateSQL
                 {
                     Category newCategory = new Category();
                     newCategory.CategoryName = jarray.SelectToken(string.Format("categoryList[{0}].categoryName", i)).ToString();
-                    newCategory.NumberOfUses = Int32.Parse(jarray.SelectToken(string.Format("categoryList[{0}].categoryUsage", i)).ToString());
+                    newCategory.NumberOfUses = 0;
 
                     for (int j = 0; j < categoriesNr[i]; j++)
                     {

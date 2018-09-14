@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace TriviaServer.DAO.Repositories
 
         public void Create(Category category)
         {
-            if(_context.Categories.Where(a => a.CategoryName == category.CategoryName).SingleOrDefault() != null)
+            if (_context.Categories.Where(a => a.CategoryName == category.CategoryName).SingleOrDefault() == null)
             {
                 _context.Categories.Add(category);
                 _context.SaveChanges();
@@ -69,7 +70,7 @@ namespace TriviaServer.DAO.Repositories
             {
                 return null;
             }
-            var category = _context.Categories.SingleOrDefault(p => p.CategoryId == id);
+            var category = _context.Categories.Include(a => a.Questions).SingleOrDefault(p => p.CategoryId == id);
             if (category != null)
             {
                 return category;
@@ -89,13 +90,35 @@ namespace TriviaServer.DAO.Repositories
             }
         }
 
-        public void PopulateCategories() {
-
-            DeleteAllCategories();
+        public void PopulateCategories()
+        {
             var categories = JSONConverter.ReadJsonFile();
-            foreach(Category category in categories)
+            foreach (Category category in categories)
             {
-                Create(category);
+                var auxCategory = _context.Categories.Include(a => a.Questions).Where(a => a.CategoryName == category.CategoryName).FirstOrDefault();
+                if (auxCategory != null)
+                {
+                    for(int i = 0; i< category.Questions.Count; i++)
+                    {
+                        if (_context.Questions.Where(a => a.QuestionText == category.Questions.ElementAt(i).QuestionText).SingleOrDefault() != null)
+                        {
+                            auxCategory.Questions.ElementAt(i).CorrectAnswer = category.Questions.ElementAt(i).CorrectAnswer;
+                            auxCategory.Questions.ElementAt(i).WrongAnswer1 = category.Questions.ElementAt(i).WrongAnswer1;
+                            auxCategory.Questions.ElementAt(i).WrongAnswer2 = category.Questions.ElementAt(i).WrongAnswer2;
+                            auxCategory.Questions.ElementAt(i).WrongAnswer3 = category.Questions.ElementAt(i).WrongAnswer3;
+                            auxCategory.Questions.ElementAt(i).QuestionDifficulty = category.Questions.ElementAt(i).QuestionDifficulty;
+                        }
+                        else
+                        {
+                            auxCategory.Questions.Add(category.Questions.ElementAt(i));
+                        }
+                    }
+                    Edit(auxCategory);
+                }
+                else
+                {
+                    Create(category);
+                }
             }
         }
     }

@@ -3,35 +3,37 @@
     {
       "categoryName":"Math",
       "categoryUsage":0,
-      "questionList":[{
-        "questionText":"sadasdadssadafas?",
-        "correctAnswer":"asada",
-        "wrongAnswer1":"sdas",
-        "wrongAnswer2":"sdas",
-        "wrongAnswer3": "sdas",
-        "questionDifficulty": 1
-      },
+      "questionList": [
         {
-          "questionText": "sadasdadssadafas?",
-          "correctAnswer": "asada",
-          "wrongAnswer1": "sdas",
-          "wrongAnswer2": "sdas",
-          "wrongAnswer3": "sdas",
+          "questionText": "Continue this pattern: 144, 121, 100, 81, 64",
+          "correctAnswer": "49",
+          "wrongAnswer1": "48",
+          "wrongAnswer2": "47",
+          "wrongAnswer3": "51",
           "questionDifficulty": 1
-        }]
+        },
+        {
+          "questionText": "Solve this: (32 x 8) + 104 - 27",
+          "correctAnswer": "333",
+          "wrongAnswer1": "301",
+          "wrongAnswer2": "408",
+          "wrongAnswer3": "395",
+          "questionDifficulty": 1
+        }
+      ]
       
     },
     {
-      "categoryName": "Science",
-      "categoryUsage": 1,
+      "categoryName": "IT",
+      "categoryUsage": 0,
       "questionList": [
         {
-          "questionText": "bbbbbbb?",
-          "correctAnswer": "abbbba",
+          "questionText": "cucubau?",
+          "correctAnswer": "Mere o bere",
           "wrongAnswer1": "sdas",
-          "wrongAnswer2": "sdas",
-          "wrongAnswer3": "sdas",
-          "questionDifficulty": 1
+          "wrongAnswer2": "Trump",
+          "wrongAnswer3": "Nu beau",
+          "questionDifficulty": 3
         },
         {
           "questionText": "sabsbsbs?",
@@ -40,13 +42,20 @@
           "wrongAnswer2": "sdas",
           "wrongAnswer3": "sdas",
           "questionDifficulty": 1
-
+        },
+        {
+          "questionText": "huh?",
+          "correctAnswer": "poate",
+          "wrongAnswer1": "cece",
+          "wrongAnswer2": "sdadadas",
+          "wrongAnswer3": "sdas",
+          "questionDifficulty": 3
         }
       ]
     },
     {
       "categoryName":"Geography",
-      "categoryUsage":2,
+      "categoryUsage":0,
       "questionList": [
         {
           "questionText": "ccccccc?",
