@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using TriviaServer.DAO.Interfaces;
+using TriviaServer.DAO.Utils;
 using TriviaServer.Models;
 
 namespace TriviaServer.Controllers.API
@@ -62,9 +64,26 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPost("refresh")]
-        public void PostCategories()
+        public ActionResult PostCategories([FromBody] Password password)
         {
-            _repo.PopulateCategories();
+
+            var configurationBuilder = new ConfigurationBuilder()
+               .AddJsonFile("C:/Git/trivia-game-server/TriviaServer/TriviaServer/appsettings.json").
+               AddEnvironmentVariables();
+            var myConfiguration = configurationBuilder.Build();
+
+            String configpassword = myConfiguration["Password:Pass"].ToString();
+
+            if (password.Pass == configpassword)
+            {
+                _repo.PopulateCategories();
+                return Ok();
+            }
+            else
+            {
+                return BadRequest("Access denied!");
+            }
+
         }
 
         [HttpDelete("{id}")]
