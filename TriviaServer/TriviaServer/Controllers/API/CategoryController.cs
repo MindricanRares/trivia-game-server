@@ -73,7 +73,7 @@ namespace TriviaServer.Controllers.API
 
             String configpassword = myConfiguration["Password:Pass"].ToString();
 
-            var decryptedPassword = password.DecryptString(password.Pass);
+            var decryptedPassword = StringEncryption.DecryptString(password.Pass);
 
             if (decryptedPassword == configpassword)
             {
