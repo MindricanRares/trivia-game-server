@@ -26,7 +26,6 @@ namespace TriviaServer.DAO.Repositories
                     _context.SaveChanges();
                 }
             }
-
         }
     }
 }
