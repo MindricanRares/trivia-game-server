@@ -30,6 +30,5 @@ namespace TriviaServer.Controllers.API
                 return BadRequest("Category was not added!");
             }
         }
-
     }
 }
