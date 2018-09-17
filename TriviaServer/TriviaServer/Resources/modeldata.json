@@ -24,7 +24,7 @@
       
     },
     {
-      "categoryName": "IT",
+      "categoryName": "Elena",
       "categoryUsage": 0,
       "questionList": [
         {
@@ -36,7 +36,7 @@
           "questionDifficulty": 3
         },
         {
-          "questionText": "sabsbsbs?",
+          "questionText": "vrei acasa?",
           "correctAnswer": "asada",
           "wrongAnswer1": "sdas",
           "wrongAnswer2": "sdas",
