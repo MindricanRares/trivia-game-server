@@ -100,7 +100,7 @@ namespace TriviaServer.DAO.Repositories
                 {
                     for(int i = 0; i< category.Questions.Count; i++)
                     {
-                        if (_context.Questions.Where(a => a.QuestionText == category.Questions.ElementAt(i).QuestionText).SingleOrDefault() != null)
+                        if (_context.Questions.Where(a => a.QuestionText == category.Questions.ElementAt(i).QuestionText).FirstOrDefault() != null)
                         {
                             auxCategory.Questions.ElementAt(i).CorrectAnswer = category.Questions.ElementAt(i).CorrectAnswer;
                             auxCategory.Questions.ElementAt(i).WrongAnswer1 = category.Questions.ElementAt(i).WrongAnswer1;
