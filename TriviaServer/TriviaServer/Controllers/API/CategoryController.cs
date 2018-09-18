@@ -66,12 +66,7 @@ namespace TriviaServer.Controllers.API
         [HttpPost("refresh")]
         public ActionResult PostCategories([FromBody] Password password)
         {
-            var configurationBuilder = new ConfigurationBuilder()
-               .AddJsonFile("C:/Git/trivia-game-server/TriviaServer/TriviaServer/appsettings.json").
-               AddEnvironmentVariables();
-            var myConfiguration = configurationBuilder.Build();
-
-            String configpassword = myConfiguration["Password:Pass"].ToString();
+            String configpassword = TriviaConfiguration.Instance.GetPassword();
 
             var decryptedPassword = StringEncryption.DecryptString(password.Pass);
 
