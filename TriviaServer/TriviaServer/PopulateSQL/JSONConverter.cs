@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using Microsoft.Extensions.Configuration;
+using TriviaServer.DAO.Utils;
 
 namespace TriviaServer.PopulateSQL
 {
@@ -14,37 +15,19 @@ namespace TriviaServer.PopulateSQL
     {
         public static List<Category> ReadJsonFile()
         {
-            //var config = new ConfigurationBuilder()
-            //        .SetBasePath(Directory.GetCurrentDirectory())
-            //        .AddIniFile("appsettings.json", optional: true, reloadOnChange: true)
-            //        .Build();
-
-            //var asda = config.GetValue<string>("NrofCategories.TotalNumber");
-
-
-            var configurationBuilder = new ConfigurationBuilder()
-                .AddJsonFile("C:/Git/trivia-game-server/TriviaServer/TriviaServer/appsettings.json").
-                AddEnvironmentVariables();
-
-            var myConfiguration = configurationBuilder.Build();
-
-
-            int numberOfCategories = Int32.Parse( myConfiguration["NoOfCategories:TotalNumber"]);
+            int numberOfCategories = TriviaConfiguration.Instance.GetNumberOfCategories();
 
             List<int> categoriesNr = new List<int>();
             for(int i = 0;i< numberOfCategories;i++)
-                categoriesNr.Add(Int32.Parse(myConfiguration[String.Format("NoOfCategories:C{0}",i+1)]));
-
+                categoriesNr.Add(TriviaConfiguration.Instance.GetNumberOfQuestions(i+1));
 
             List<Category> categoryList = new List<Category>();
 
             string filepath = "Resources/modeldata.json";
             using (StreamReader r = new StreamReader(filepath))
             {
-                
                 var json = r.ReadToEnd();
                 JObject jarray = JObject.Parse(json);
-
               
                 for (int i = 0; i < numberOfCategories; i++)
                 {
