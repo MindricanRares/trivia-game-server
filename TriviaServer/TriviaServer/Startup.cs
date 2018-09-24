@@ -45,30 +45,8 @@ namespace TriviaServer
             // services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMvc();
 
-            //services.AddDbContext<ApplicationContext>(options =>
-            //options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
-
-	        services.AddEntityFrameworkNpgsql().AddDbContext<ApplicationContext>(options =>
-	        {
-		        var connUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
-
-				// Parse connection URL to connection string for Npgsql
-		        connUrl = connUrl.Replace("postgres://", string.Empty);
-
-		        var pgUserPass = connUrl.Split("@")[0];
-		        var pgHostPortDb = connUrl.Split("@")[1];
-		        var pgHostPort = pgHostPortDb.Split("/")[0];
-
-		        var pgDb = pgHostPortDb.Split("/")[1];
-		        var pgUser = pgUserPass.Split(":")[0];
-		        var pgPass = pgUserPass.Split(":")[1];
-		        var pgHost = pgHostPort.Split(":")[0];
-		        var pgPort = pgHostPort.Split(":")[1];
-
-		        options.UseNpgsql(Configuration.GetConnectionString($"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb};sslmode=Prefer;Trust Server Certificate=true"));
-
-		        //options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
-	        });
+            services.AddDbContext<ApplicationContext>(options =>
+				options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
 
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IGameRepository, GameRepository>();
