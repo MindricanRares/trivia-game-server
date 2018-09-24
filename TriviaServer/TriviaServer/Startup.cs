@@ -65,7 +65,7 @@ namespace TriviaServer
 		        var pgHost = pgHostPort.Split(":")[0];
 		        var pgPort = pgHostPort.Split(":")[1];
 
-		        options.UseNpgsql(Configuration.GetConnectionString($"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb}");
+		        options.UseNpgsql(Configuration.GetConnectionString($"Server={pgHost};Port={pgPort};User Id={pgUser};Password={pgPass};Database={pgDb}"));
 
 		        //options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
 	        });
