@@ -21,7 +21,7 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Category>> Get()
+        public ActionResult<IEnumerable<Category>> GetCatgories()
         {
             try
             {
@@ -36,7 +36,7 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Category> Get(int id)
+        public ActionResult<Category> GetById(int id)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPost]
-        public ActionResult Post(Category category)
+        public ActionResult CreateCategory(Category category)
         {
             try
             {
@@ -94,12 +94,6 @@ namespace TriviaServer.Controllers.API
             {
                 return BadRequest("Category not found!");
             }
-        }
-
-        [HttpPut]
-        public void Put(Category category)
-        {
-            _repo.Edit(category);
         }
     }
 }

@@ -54,7 +54,7 @@ namespace TriviaServer.DAO.Repositories
         public IEnumerable<Category> GetCategories()
         {
             var categories = _context.Categories.ToList();
-            if(categories != null)
+            if(categories.Count() > 0)
             {
                 return categories;
             }
@@ -78,15 +78,6 @@ namespace TriviaServer.DAO.Repositories
             else
             {
                 throw new Exception("Category not found!");
-            }
-        }
-
-        public void DeleteAllCategories()
-        {
-            var categories = GetCategories();
-            foreach (Category category in categories)
-            {
-                Delete(category.CategoryId);
             }
         }
 

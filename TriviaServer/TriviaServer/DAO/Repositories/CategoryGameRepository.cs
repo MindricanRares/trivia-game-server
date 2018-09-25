@@ -25,6 +25,14 @@ namespace TriviaServer.DAO.Repositories
                     _context.CategoryGames.Add(categoryGame);
                     _context.SaveChanges();
                 }
+                else
+                {
+                    throw new Exception("Category does not exist!");
+                }
+            }
+            else
+            {
+                throw new Exception("Gameroom does not exist!");
             }
         }
     }

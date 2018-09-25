@@ -20,7 +20,7 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Game>> Get()
+        public ActionResult<IEnumerable<Game>> GetGames()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Game> Get(int id)
+        public ActionResult<Game> GetById(int id)
         {
             try
             {
@@ -118,7 +118,7 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPost]
-        public ActionResult Post(Game game)
+        public ActionResult PostGames([FromBody] Game game)
         {
             try
             {
