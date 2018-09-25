@@ -19,7 +19,7 @@ namespace TriviaServer.DAO.Repositories
         public void Create(Question question)
         {
             if(_context.Questions.Where(a => a.CategoryId == question.CategoryId)
-                .Where(a => a.QuestionText == question.QuestionText).SingleOrDefault() != null)
+                .Where(a => a.QuestionText == question.QuestionText).SingleOrDefault() == null)
             {
                 _context.Questions.Add(question);
                 _context.SaveChanges();
@@ -53,7 +53,7 @@ namespace TriviaServer.DAO.Repositories
         public IEnumerable<Question> GetQuestions()
         {
             var questions = _context.Questions.ToList();
-            if(questions != null)
+            if(questions.Count > 0)
             {
                 return questions;
             }

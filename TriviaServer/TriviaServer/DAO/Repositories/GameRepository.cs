@@ -19,7 +19,7 @@ namespace TriviaServer.DAO.Repositories
 
         public void Create(Game game)
         {
-            if (_context.Games.Where(a => a.UniqueKey == game.UniqueKey).SingleOrDefault() != null)
+            if (_context.Games.Where(a => a.UniqueKey == game.UniqueKey).FirstOrDefault() == null)
             {
                 _context.Games.Add(game);
                 _context.SaveChanges();
@@ -53,7 +53,7 @@ namespace TriviaServer.DAO.Repositories
         public IEnumerable<Game> GetGames()
         {
             var games = _context.Games.ToList();
-            if(games != null)
+            if(games.Count > 0)
             {
                 return games;
             }
@@ -98,7 +98,7 @@ namespace TriviaServer.DAO.Repositories
 
         public List<PlayerName> GetPlayersByRoomId(int gameRoomId)
         {
-            if (_context.Games.Where(a => a.GameId == gameRoomId).SingleOrDefault() != null)
+            if (_context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault() != null)
             {
                 var players = new List<PlayerName>();
                 _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()

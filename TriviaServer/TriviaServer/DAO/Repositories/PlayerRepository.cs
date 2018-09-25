@@ -55,7 +55,7 @@ namespace TriviaServer.DAO.Repositories
         public IEnumerable<Player> GetPlayers()
         {
             var players = _context.Players.ToList();
-            if(players != null)
+            if(players.Count > 0)
             {
                 return players;
             }
