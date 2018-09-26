@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using TriviaServer.Controllers.API;
 using TriviaServer.DAO.Repositories;
+using TriviaServer.DAO.Utils;
 using TriviaServer.Models;
 using Xunit;
 
@@ -17,12 +18,12 @@ namespace XUnitTest
         {
             CategoryGameRepository categoryGameRepo = new CategoryGameRepository(DatabaseDummy.DatabaseDummyCreate("TestAddCategoriesToGame"));
             CategoryGameController categoryGameController = new CategoryGameController(categoryGameRepo);
-            CategoryGame categoryGame = new CategoryGame()
+            GameCategories gameCategories = new GameCategories
             {
-                CategoryId = 34,
-                GameId = 4
+                GameId = 4,
+                CategoriesId = new List<int>() { 34,35}
             };
-            var actionResult = categoryGameController.AddCategoriesToGame(categoryGame);
+            var actionResult = categoryGameController.AddCategoriesToGame(gameCategories);
             Assert.IsNotType<BadRequestObjectResult>(actionResult);
         }
     }

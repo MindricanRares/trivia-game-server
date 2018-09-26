@@ -32,7 +32,6 @@ public static class DatabaseDummy
         context.Questions.Add(new Question { QuestionId = 10, QuestionText = "Intrebare1", CorrectAnswer = "49", WrongAnswer1 = "1", WrongAnswer2 = "2", WrongAnswer3 = "3", CategoryId = 34, QuestionDifficulty = 1 });
         context.Questions.Add(new Question { QuestionId = 11, QuestionText = "Intrebare2", CorrectAnswer = "49", WrongAnswer1 = "1", WrongAnswer2 = "2", WrongAnswer3 = "3", CategoryId = 34, QuestionDifficulty = 1 });
 
-        context.CategoryGames.Add(new CategoryGame { GameId = 4, CategoryId = 35 });
         context.CategoryGames.Add(new CategoryGame { GameId = 4, CategoryId = 36 });
 
         context.SaveChanges();
