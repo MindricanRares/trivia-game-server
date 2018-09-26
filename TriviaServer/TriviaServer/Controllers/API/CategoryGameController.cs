@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TriviaServer.DAO.Utils;
 using TriviaServer.Models;
 
 namespace TriviaServer.Controllers.API
@@ -18,16 +19,17 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPost]
-        public ActionResult AddCategoriesToGame([FromBody] CategoryGame categoryGame)
+        public ActionResult AddCategoriesToGame([FromBody] GameCategories gameCategories)
         {
             try
             {
-                _repo.Create(categoryGame);
-                return Ok("Category was successfully added");
+               _repo.Create(gameCategories);
+               return Ok("Categories were successfully added");
+             
             }
             catch
             {
-                return BadRequest("Category was not added!");
+                return BadRequest("Categories were not added!");
             }
         }
     }
