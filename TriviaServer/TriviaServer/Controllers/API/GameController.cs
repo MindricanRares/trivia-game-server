@@ -47,73 +47,73 @@ namespace TriviaServer.Controllers.API
             }
         }
 
-        [HttpGet("{gameRoomId}/players/score")]
-        public ActionResult GetPlayersAndScore(int gameRoomId)
+        [HttpGet("{uniqueKey}/players/score")]
+        public ActionResult GetPlayersAndScore(int uniqueKey)
         {
             try
             {
-                var players = _repo.GetPlayerAndScoreByGameRoomId(gameRoomId);
+                var players = _repo.GetPlayerAndScoreByUniqueKey(uniqueKey);
                 return new JsonResult(players);
             }
             catch
             {
-                return BadRequest("Gameroom " + gameRoomId + " not found!");
+                return BadRequest("UniqueKey " + uniqueKey + " not found!");
             }
         }
 
-        [HttpGet("{gameRoomId}/players")]
-        public ActionResult GetPlayersName(int gameRoomId)
+        [HttpGet("{uniqueKey}/players")]
+        public ActionResult GetPlayersName(int uniqueKey)
         {
             try
             {
-                var players = _repo.GetPlayersByRoomId(gameRoomId);
+                var players = _repo.GetPlayersByUniqueKey(uniqueKey);
                 return new JsonResult(players);
             }
             catch
             {
-                return BadRequest("Gameroom " + gameRoomId + " not found!");
+                return BadRequest("UniqueKey " + uniqueKey + " not found!");
             }
         }
 
-        [HttpGet("{gameRoomId}/players/number")]
-        public ActionResult GetNumberOfPlayers(int gameRoomId)
+        [HttpGet("{uniqueKey}/players/number")]
+        public ActionResult GetNumberOfPlayers(int uniqueKey)
         {
             try
             {
-                var players = _repo.GetPlayersByRoomId(gameRoomId);
+                var players = _repo.GetPlayersByUniqueKey(uniqueKey);
                 return new JsonResult(players.Count);
             }
             catch
             {
-                return BadRequest("Gameroom " + gameRoomId + " not found!");
+                return BadRequest("UniqueKey " + uniqueKey + " not found!");
             }
         }
 
-        [HttpGet("{gameRoomId}/statistics")]
-        public ActionResult GetStatistics(int gameRoomId)
+        [HttpGet("{uniqueKey}/statistics")]
+        public ActionResult GetStatistics(int uniqueKey)
         {
             try
             {
-                var averageScore = _repo.GetAverageScore(gameRoomId);
+                var averageScore = _repo.GetAverageScore(uniqueKey);
                 return new JsonResult(averageScore);
             }
             catch
             {
-                return BadRequest("Gameroom " + gameRoomId + " not found!");
+                return BadRequest("UniqueKey " + uniqueKey + " not found!");
             }
         }
 
-        [HttpGet("{gameRoomId}/questions")]
-        public ActionResult GetQuestionsAndAnswers(int gameRoomId)
+        [HttpGet("{uniqueKey}/questions")]
+        public ActionResult GetQuestionsAndAnswers(int uniqueKey)
         {
             try
             {
-                var questions = _repo.GetQuestionsAndAnswersByGameRoomId(gameRoomId);
+                var questions = _repo.GetQuestionsAndAnswersByUniqueKey(uniqueKey);
                 return new JsonResult(questions);
             }
             catch
             {
-                return BadRequest("Gameroom " + gameRoomId + " not found!");
+                return BadRequest("UniqueKey " + uniqueKey + " not found!");
             }
         }
 
