@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace TriviaServer.DAO.Utils
 {
-    public class PlayerScore
+    public class PlayerUniqueKey
     {
-        public String Name { get; set; }
-        public int Score { get; set; }
+        public String PlayerName { get; set; }
         public int UniqueKey { get; set; }
     }
 }

@@ -48,16 +48,17 @@ namespace TriviaServer.Controllers.API
         }
 
         [HttpPost]
-        public ActionResult PostPlayer([FromBody] Player player)
+        public ActionResult PostPlayer([FromBody] PlayerUniqueKey playerUniqueKey)
         {
             try
             {
-                _repo.Create(player);
-                return Ok(player);
+                
+                _repo.Create(playerUniqueKey);
+                return Ok(playerUniqueKey);
             }
             catch
             {
-                return BadRequest(player);
+                return BadRequest(playerUniqueKey);
             }
         }
 
@@ -66,7 +67,7 @@ namespace TriviaServer.Controllers.API
         {
             try
             {
-                _repo.UpdatePlayerScore(player.GameroomId, player.Name, player.Score);
+                _repo.UpdatePlayerScore(player.UniqueKey, player.Name, player.Score);
                 return Ok(player);
             }
             catch

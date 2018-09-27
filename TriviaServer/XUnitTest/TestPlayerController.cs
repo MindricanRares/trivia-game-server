@@ -38,11 +38,10 @@ namespace XUnitTest
         {
             PlayerRepository playerRepo = new PlayerRepository(DatabaseDummy.DatabaseDummyCreate("TestPostPlayer"));
             PlayerController playerController = new PlayerController(playerRepo);
-            Player player = new Player()
+            PlayerUniqueKey player = new PlayerUniqueKey
             {
                 PlayerName="Andreea",
-                PlayerScore=500,
-                GameroomId=4
+                UniqueKey=1
             };
             var actionResult = playerController.PostPlayer(player);
             Assert.IsNotType<BadRequestObjectResult>(actionResult);
@@ -57,7 +56,7 @@ namespace XUnitTest
             {
                 Name="Dana",
                 Score=50,
-                GameroomId=4
+                UniqueKey=1
             };
             var actionResult = playerController.UpdatePlayerScore(player);
             Assert.IsNotType<BadRequestObjectResult>(actionResult);
