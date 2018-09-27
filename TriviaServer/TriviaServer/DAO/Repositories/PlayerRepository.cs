@@ -18,8 +18,28 @@ namespace TriviaServer.DAO.Repositories
             _context = context;
         }
 
-        public void Create(Player player)
+        public int GetGameroomIdByUniqueKey(int uniqueKey)
         {
+            int? gameRoomId = _context.Games.Where(a => a.UniqueKey == uniqueKey).FirstOrDefault().GameId;
+            if (gameRoomId != null)
+            {
+                return gameRoomId.Value;
+            }
+            else
+            {
+                throw new Exception("UniqueKey not found");
+            }
+        }
+
+        public void Create(PlayerUniqueKey playerUniqueKey)
+        {
+            Player player = new Player
+            {
+                PlayerName = playerUniqueKey.PlayerName,
+                PlayerScore = 0,
+                GameroomId = GetGameroomIdByUniqueKey(playerUniqueKey.UniqueKey)
+            };
+
             var players = _context.Players.Where(a => a.GameroomId == player.GameroomId).ToList();
             if (Validation.CreatePlayerValidation(players,player))
             {
@@ -82,8 +102,9 @@ namespace TriviaServer.DAO.Repositories
             }
         }
 
-        public void UpdatePlayerScore(int gameRoomId, String playerName, int score)
+        public void UpdatePlayerScore(int uniqueKey, String playerName, int score)
         {
+            int gameRoomId = GetGameroomIdByUniqueKey(uniqueKey);
             var players = _context.Players.Where(a => a.GameroomId == gameRoomId).ToList();
             if (Validation.UpdateScoreValidation(players, playerName))
             {

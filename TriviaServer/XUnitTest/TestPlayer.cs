@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using TriviaServer;
 using TriviaServer.DAO.Repositories;
+using TriviaServer.DAO.Utils;
 using TriviaServer.Models;
 using Xunit;
 
@@ -16,11 +17,10 @@ namespace XUnitTest
         public void TestCreatePlayer()
         {
             PlayerRepository playerRepo = new PlayerRepository(DatabaseDummy.DatabaseDummyCreate("TestCreatePlayer"));
-            Player player = new Player
+            PlayerUniqueKey player = new PlayerUniqueKey
             {
                 PlayerName = "Paul",
-                GameroomId = 4,
-                PlayerScore = 100
+                UniqueKey = 1
             };
 
             try
@@ -89,7 +89,7 @@ namespace XUnitTest
 
             try
             {
-                playerRepo.UpdatePlayerScore(4, "Elena", 50);
+                playerRepo.UpdatePlayerScore(1, "Elena", 50);
                 Assert.True(true);
             }
             catch

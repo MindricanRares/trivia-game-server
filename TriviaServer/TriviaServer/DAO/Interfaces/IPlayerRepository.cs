@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TriviaServer.DAO.Utils;
 using TriviaServer.Models;
 
 namespace TriviaServer.DAO.Interfaces
 {
     public interface IPlayerRepository
     {
-        void Create(Player p);
+        void Create(PlayerUniqueKey p);
         void Edit(Player p);
         void Delete(int id);
         IEnumerable<Player> GetPlayers();

@@ -85,8 +85,8 @@ namespace TriviaServer.DAO.Repositories
             if (_context.Games.Where(a => a.GameId == gameRoomId).SingleOrDefault() != null)
             {
                 var players = new List<PlayerScore>();
-                _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
-                    .ForEach(a => players.Add(new PlayerScore() { Name = a.PlayerName, Score = a.PlayerScore, GameroomId = a.GameroomId }));
+                //_context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
+                //    .ForEach(a => players.Add(new PlayerScore() { Name = a.PlayerName, Score = a.PlayerScore, GameroomId = a.GameroomId }));
 
                 return players;
             }
@@ -156,5 +156,7 @@ namespace TriviaServer.DAO.Repositories
                 throw new Exception("Gameroom not found!");
             }
         }
+
+        
     }
 }
