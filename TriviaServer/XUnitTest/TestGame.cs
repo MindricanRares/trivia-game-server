@@ -79,13 +79,13 @@ namespace XUnitTest
         }
 
         [Fact]
-        public void TestGetPlayerAndScoreByGameRoomId()
+        public void TestGetPlayerAndScoreByUniqueKey()
         {
             GameRepository gameRepo = new GameRepository(DatabaseDummy.DatabaseDummyCreate("TestGetPlayerAndScoreByGameRoomId"));
 
             try
             {
-                var playersAndScore = gameRepo.GetPlayerAndScoreByGameRoomId(4);
+                var playersAndScore = gameRepo.GetPlayerAndScoreByUniqueKey(1);
                 Assert.True(true);
             }
             catch
@@ -95,13 +95,13 @@ namespace XUnitTest
         }
 
         [Fact]
-        public void TestGetPlayersByRoomId()
+        public void TestGetPlayersByUniqueKey()
         {
             GameRepository gameRepo = new GameRepository(DatabaseDummy.DatabaseDummyCreate("TestGetPlayersByRoomId"));
 
             try
             {
-                var players = gameRepo.GetPlayersByRoomId(5);
+                var players = gameRepo.GetPlayersByUniqueKey(1);
                 Assert.True(true);
             }
             catch
@@ -117,7 +117,7 @@ namespace XUnitTest
 
             try
             {
-                var averageScore = gameRepo.GetAverageScore(5);
+                var averageScore = gameRepo.GetAverageScore(1);
                 Assert.True(true);
             }
             catch
@@ -126,13 +126,13 @@ namespace XUnitTest
             }
         }
         [Fact]
-        public void TestGetQuestionsAndAnswersByGameRoomId()
+        public void TestGetQuestionsAndAnswersByUniqueKey()
         {
             GameRepository gameRepo = new GameRepository(DatabaseDummy.DatabaseDummyCreate("TestGetQuestionsAndAnswersByGameRoomId"));
 
             try
             {
-                var questions = gameRepo.GetQuestionsAndAnswersByGameRoomId(4);
+                var questions = gameRepo.GetQuestionsAndAnswersByUniqueKey(1);
                 Assert.True(true);
             }
             catch

@@ -80,13 +80,40 @@ namespace TriviaServer.DAO.Repositories
             }
         }
 
-        public List<PlayerScore> GetPlayerAndScoreByGameRoomId(int gameRoomId)
+        public int GetGameroomIdByUniqueKey(int uniqueKey)
         {
+            int? gameRoomId = _context.Games.Where(a => a.UniqueKey == uniqueKey).FirstOrDefault().GameId;
+            if (gameRoomId != null)
+            {
+                return gameRoomId.Value;
+            }
+            else
+            {
+                throw new Exception("UniqueKey not found");
+            }
+        }
+
+        public int GetUniqueKeyByGameroomId(int gameRoomId)
+        {
+            int? uniqueKey = _context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault().UniqueKey;
+            if (uniqueKey != null)
+            {
+                return uniqueKey.Value;
+            }
+            else
+            {
+                throw new Exception("UniqueKey not found");
+            }
+        }
+
+        public List<PlayerScore> GetPlayerAndScoreByUniqueKey(int uniqueKey)
+        {
+            int gameRoomId = GetGameroomIdByUniqueKey(uniqueKey);
             if (_context.Games.Where(a => a.GameId == gameRoomId).SingleOrDefault() != null)
             {
                 var players = new List<PlayerScore>();
-                //_context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
-                //    .ForEach(a => players.Add(new PlayerScore() { Name = a.PlayerName, Score = a.PlayerScore, GameroomId = a.GameroomId }));
+                _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
+                    .ForEach(a => players.Add(new PlayerScore() { Name = a.PlayerName, Score = a.PlayerScore, UniqueKey = GetUniqueKeyByGameroomId(a.GameroomId) }));
 
                 return players;
             }
@@ -96,8 +123,9 @@ namespace TriviaServer.DAO.Repositories
             }
         }
 
-        public List<PlayerName> GetPlayersByRoomId(int gameRoomId)
+        public List<PlayerName> GetPlayersByUniqueKey(int uniqueKey)
         {
+            int gameRoomId = GetGameroomIdByUniqueKey(uniqueKey);
             if (_context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault() != null)
             {
                 var players = new List<PlayerName>();
@@ -111,15 +139,16 @@ namespace TriviaServer.DAO.Repositories
             }
         }
 
-        public double GetAverageScore(int gameRoomId)
+        public double GetAverageScore(int uniqueKey)
         {
+            int gameRoomId = GetGameroomIdByUniqueKey(uniqueKey);
             var games = GetGames();
             if (_context.Games.Where(a => a.GameId == gameRoomId).SingleOrDefault() != null)
             {
                 double sum = 0;
                 _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
                     .ForEach(a => sum += a.PlayerScore);
-                var numberOfPlayers = GetPlayersByRoomId(gameRoomId).Count;
+                var numberOfPlayers = GetPlayersByUniqueKey(uniqueKey).Count;
                 return sum / numberOfPlayers;
             }
             else
@@ -128,8 +157,9 @@ namespace TriviaServer.DAO.Repositories
             }
         }
 
-        public List<QuestionAnswers> GetQuestionsAndAnswersByGameRoomId(int gameRoomId)
+        public List<QuestionAnswers> GetQuestionsAndAnswersByUniqueKey(int uniqueKey)
         {
+            int gameRoomId = GetGameroomIdByUniqueKey(uniqueKey);
             var games = GetGames();
             if (_context.Games.Where(a => a.GameId == gameRoomId).SingleOrDefault() != null)
             {

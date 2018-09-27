@@ -38,7 +38,6 @@ namespace TriviaServer.DAO.Repositories
                         throw new Exception("Category does not exist!");
                     }
                 }
-                
             }
             else
             {

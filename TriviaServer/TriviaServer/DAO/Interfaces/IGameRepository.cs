@@ -14,9 +14,9 @@ namespace TriviaServer.DAO.Interfaces
         void Delete(int id);
         IEnumerable<Game> GetGames();
         Game GetByID(int? id);
-        List<PlayerScore> GetPlayerAndScoreByGameRoomId(int gameRoomId);
-        List<PlayerName> GetPlayersByRoomId(int gameRoomId);
-        double GetAverageScore(int gameRoomId);
-        List<QuestionAnswers> GetQuestionsAndAnswersByGameRoomId(int gameRoomId);
+        List<PlayerScore> GetPlayerAndScoreByUniqueKey(int uniqueKey);
+        List<PlayerName> GetPlayersByUniqueKey(int uniqueKey);
+        double GetAverageScore(int uniqueKey);
+        List<QuestionAnswers> GetQuestionsAndAnswersByUniqueKey(int uniqueKey);
     }
 }

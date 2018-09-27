@@ -38,7 +38,7 @@ namespace XUnitTest
             GameRepository gameRepo = new GameRepository(DatabaseDummy.DatabaseDummyCreate("TestGetPlayersAndScore"));
             GameController gameController = new GameController(gameRepo);
 
-            var actionResult = gameController.GetPlayersAndScore(4);
+            var actionResult = gameController.GetPlayersAndScore(1);
             Assert.IsNotType<BadRequestObjectResult>(actionResult);
         }
 
@@ -48,7 +48,7 @@ namespace XUnitTest
             GameRepository gameRepo = new GameRepository(DatabaseDummy.DatabaseDummyCreate("TestGetPlayersName"));
             GameController gameController = new GameController(gameRepo);
 
-            var actionResult = gameController.GetPlayersName(5);
+            var actionResult = gameController.GetPlayersName(1);
             Assert.IsNotType<BadRequestObjectResult>(actionResult);
         }
 
@@ -58,7 +58,7 @@ namespace XUnitTest
             GameRepository gameRepo = new GameRepository(DatabaseDummy.DatabaseDummyCreate("TestGetNumberOfPlayers"));
             GameController gameController = new GameController(gameRepo);
 
-            var actionResult = gameController.GetNumberOfPlayers(4);
+            var actionResult = gameController.GetNumberOfPlayers(1);
             Assert.IsNotType<BadRequestObjectResult>(actionResult);
         }
 
@@ -68,7 +68,7 @@ namespace XUnitTest
             GameRepository gameRepo = new GameRepository(DatabaseDummy.DatabaseDummyCreate("TestGetStatistics"));
             GameController gameController = new GameController(gameRepo);
 
-            var actionResult = gameController.GetStatistics(5);
+            var actionResult = gameController.GetStatistics(1);
             Assert.IsNotType<BadRequestObjectResult>(actionResult);
         }
 
@@ -78,7 +78,7 @@ namespace XUnitTest
             GameRepository gameRepo = new GameRepository(DatabaseDummy.DatabaseDummyCreate("TestGetQuestionsAndAnswers"));
             GameController gameController = new GameController(gameRepo);
 
-            var actionResult = gameController.GetQuestionsAndAnswers(5);
+            var actionResult = gameController.GetQuestionsAndAnswers(1);
             Assert.IsNotType<BadRequestObjectResult>(actionResult);
         }
 
