@@ -1,8 +1,8 @@
 {
-  "categoryList":[
+  "categoryList": [
     {
-      "categoryName":"Math",
-      "categoryUsage":0,
+      "categoryName": "Math",
+      "categoryUsage": 0,
       "questionList": [
         {
           "questionText": "Continue this pattern: 144, 121, 100, 81, 64",
@@ -18,10 +18,18 @@
           "wrongAnswer1": "301",
           "wrongAnswer2": "408",
           "wrongAnswer3": "395",
-          "questionDifficulty": 1
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "Is this a question?",
+          "correctAnswer": "Banana",
+          "wrongAnswer1": "Cucumber",
+          "wrongAnswer2": "Next question...",
+          "wrongAnswer3": "Why not?",
+          "questionDifficulty": 2
         }
       ]
-      
+
     },
     {
       "categoryName": "IT",
@@ -41,7 +49,7 @@
           "wrongAnswer1": "sdas",
           "wrongAnswer2": "sdas",
           "wrongAnswer3": "sdas",
-          "questionDifficulty": 1
+          "questionDifficulty": 2
         },
         {
           "questionText": "huh?",
@@ -49,13 +57,13 @@
           "wrongAnswer1": "cece",
           "wrongAnswer2": "sdadadas",
           "wrongAnswer3": "sdas",
-          "questionDifficulty": 3
+          "questionDifficulty": 1
         }
       ]
     },
     {
-      "categoryName":"Geography",
-      "categoryUsage":0,
+      "categoryName": "Geography",
+      "categoryUsage": 0,
       "questionList": [
         {
           "questionText": "ccccccc?",
@@ -71,10 +79,107 @@
           "wrongAnswer1": "scs",
           "wrongAnswer2": "sccc",
           "wrongAnswer3": "sdcccc",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "Black Sea?",
+          "correctAnswer": "NO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+          "wrongAnswer1": "mOUNTAIN",
+          "wrongAnswer2": "Next question...",
+          "wrongAnswer3": "Why not?",
+          "questionDifficulty": 3
+        }
+      ]
+    },
+    {
+      "categoryName": "History",
+      "categoryUsage": 0,
+      "questionList": [
+        {
+          "questionText": "Basescu?",
+          "correctAnswer": "acc",
+          "wrongAnswer1": "Neah",
+          "wrongAnswer2": "adbbbccc",
+          "wrongAnswer3": "cc",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "aRE YOU talking TO Me?",
+          "correctAnswer": "ccc",
+          "wrongAnswer1": "scs",
+          "wrongAnswer2": "sccc",
+          "wrongAnswer3": "Hitler",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "PSD?",
+          "correctAnswer": "N",
+          "wrongAnswer1": "U",
+          "wrongAnswer2": "...",
+          "wrongAnswer3": "Why not?",
           "questionDifficulty": 1
         }
       ]
+    },
+    {
+      "categoryName": "English",
+      "categoryUsage": 0,
+      "questionList": [
+        {
+          "questionText": "To be or not to be?",
+          "correctAnswer": "acc",
+          "wrongAnswer1": "This is the correct answer!",
+          "wrongAnswer2": "adbbbccc",
+          "wrongAnswer3": "cc",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "Is this a question?",
+          "correctAnswer": "Banana",
+          "wrongAnswer1": "Cucumber",
+          "wrongAnswer2": "Next question...",
+          "wrongAnswer3": "Why not?",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "dsdfdhsh?",
+          "correctAnswer": "Banana",
+          "wrongAnswer1": "Cucumber",
+          "wrongAnswer2": "Next question...",
+          "wrongAnswer3": "Why not?",
+          "questionDifficulty": 1
+        }
+      ]
+    },
+    {
+      "categoryName": "Biology",
+      "categoryUsage": 0,
+      "questionList": [
+        {
+          "questionText": "What is ligma?",
+          "correctAnswer": "acc",
+          "wrongAnswer1": "Cancer",
+          "wrongAnswer2": "adbbbccc",
+          "wrongAnswer3": "cc",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "?",
+          "correctAnswer": "Da",
+          "wrongAnswer1": "scs",
+          "wrongAnswer2": "sccc",
+          "wrongAnswer3": "NU",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "Is this a potato?",
+          "correctAnswer": "Banana",
+          "wrongAnswer1": "Cucumber",
+          "wrongAnswer2": "Next question...",
+          "wrongAnswer3": "Why not?",
+          "questionDifficulty": 2
+        }
+      ]
     }
-    
-    ]
-}
+      ]
+    }

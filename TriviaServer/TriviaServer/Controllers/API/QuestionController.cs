@@ -46,6 +46,20 @@ namespace TriviaServer.Controllers.API
             }
         }
 
+        [HttpGet("{uniqueKey}/random")]
+        public ActionResult<IEnumerable<Question>> GenerateGameQuestions(int uniqueKey)
+        {
+            try
+            {
+                var questions = _repo.GenerateGameQuestions(uniqueKey);
+                return new JsonResult(questions);
+            }
+            catch
+            {
+                return BadRequest("No question was found!");
+            }
+        }
+
         [HttpPost]
         public ActionResult PostQuestion(Question question)
         {
