@@ -9,6 +9,7 @@ namespace TriviaServer.Models
     {
         public int GameId { get; set; }
         public int UniqueKey{ get; set; }
+        public bool IsActive { get; set; }
         public ICollection<Player> Players { get; set; }
         public ICollection<CategoryGame> CategoryGames { get; set; }
     }
