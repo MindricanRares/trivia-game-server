@@ -21,12 +21,68 @@
           "questionDifficulty": 3
         },
         {
-          "questionText": "Is this a question?",
-          "correctAnswer": "Banana",
-          "wrongAnswer1": "Cucumber",
-          "wrongAnswer2": "Next question...",
-          "wrongAnswer3": "Why not?",
+          "questionText": "123x123= ?",
+          "correctAnswer": "15129",
+          "wrongAnswer1": "15123",
+          "wrongAnswer2": "18123",
+          "wrongAnswer3": "32879",
           "questionDifficulty": 2
+        },
+        {
+          "questionText": "What is 0.3 as a fraction?",
+          "correctAnswer": "3/10",
+          "wrongAnswer1": "10/9",
+          "wrongAnswer2": "10/3",
+          "wrongAnswer3": "3289",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "What is the square root of 576?",
+          "correctAnswer": "24",
+          "wrongAnswer1": "3,57",
+          "wrongAnswer2": "23",
+          "wrongAnswer3": "26",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "What are all the prime numbers between 20 and 30?",
+          "correctAnswer": "23 and 29",
+          "wrongAnswer1": "21 and 27",
+          "wrongAnswer2": "23 and 30",
+          "wrongAnswer3": "25 and 29",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "What is 75% as a fraction in simplest form? ",
+          "correctAnswer": "3/4",
+          "wrongAnswer1": "0.25",
+          "wrongAnswer2": "0.12",
+          "wrongAnswer3": "4/3",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "The value of x + x(x) when x = 2 is: ?",
+          "correctAnswer": "6",
+          "wrongAnswer1": "16",
+          "wrongAnswer2": "8",
+          "wrongAnswer3": "12",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "What is the square root of 3 times the square root of 3?",
+          "correctAnswer": "3",
+          "wrongAnswer1": "9",
+          "wrongAnswer2": "12",
+          "wrongAnswer3": "27",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "What is 1/5th of 25? ",
+          "correctAnswer": "5",
+          "wrongAnswer1": "10",
+          "wrongAnswer2": "25",
+          "wrongAnswer3": "50",
+          "questionDifficulty": 3
         }
       ]
 
@@ -36,28 +92,84 @@
       "categoryUsage": 0,
       "questionList": [
         {
-          "questionText": "cucubau?",
-          "correctAnswer": "Mere o bere",
-          "wrongAnswer1": "sdas",
-          "wrongAnswer2": "Trump",
-          "wrongAnswer3": "Nu beau",
+          "questionText": "What is the meaning of CPU?",
+          "correctAnswer": "Central Processing Unit",
+          "wrongAnswer1": "Critical Processing Unit",
+          "wrongAnswer2": "Crucial Processing Unit",
+          "wrongAnswer3": "Central Printing Unit",
           "questionDifficulty": 3
         },
         {
-          "questionText": "vrei acasa?",
-          "correctAnswer": "asada",
-          "wrongAnswer1": "sdas",
-          "wrongAnswer2": "sdas",
-          "wrongAnswer3": "sdas",
+          "questionText": "How many bits make a byte?",
+          "correctAnswer": "8 bits",
+          "wrongAnswer1": "16 bits",
+          "wrongAnswer2": "12 bits",
+          "wrongAnswer3": "24 bits",
           "questionDifficulty": 2
         },
         {
-          "questionText": "huh?",
-          "correctAnswer": "poate",
-          "wrongAnswer1": "cece",
-          "wrongAnswer2": "sdadadas",
-          "wrongAnswer3": "sdas",
+          "questionText": "The process of starting or restarting a computer is called",
+          "correctAnswer": "Booting",
+          "wrongAnswer1": "Start up point",
+          "wrongAnswer2": "Connecting",
+          "wrongAnswer3": "Resetting",
           "questionDifficulty": 1
+        },
+        {
+          "questionText": "What is 'Intranet'? ",
+          "correctAnswer": "Internal network designed to serve the internal informational needs of a single organization.",
+          "wrongAnswer1": "Internal internet used to transfer information internally.",
+          "wrongAnswer2": "Internal internet used to transfer information to the outside company.",
+          "wrongAnswer3": "Internal network designed to transfer the information between two organization",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "What is ISP and what is their functions?",
+          "correctAnswer": "Internet Service Provider. A company which provide internet connection to other people for a fee",
+          "wrongAnswer1": "Intenal Service Provider. A company which provide internet connection for a fee",
+          "wrongAnswer2": "Internet Service Provider. A company which provide internal transferring data service to an organization",
+          "wrongAnswer3": "Internal Service Provider. A company provide internal connection to transfer data between two company",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "HTTP stand for",
+          "correctAnswer": "Hyper Text Transport Protocol",
+          "wrongAnswer1": "Hyper Transport Text Protocol",
+          "wrongAnswer2": "High Text Transport Protocol",
+          "wrongAnswer3": "High Transport Text Protocol",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "How many computer languages are in use?",
+          "correctAnswer": "2000",
+          "wrongAnswer1": "50",
+          "wrongAnswer2": "500",
+          "wrongAnswer3": "150",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "Which of these is not an early computer?",
+          "correctAnswer": "NASA",
+          "wrongAnswer1": "SAGE",
+          "wrongAnswer2": "ENIAC",
+          "wrongAnswer3": "UNIVAC",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "\"Which of the following is not one of the early 'protocols', or ways to use the Internet?",
+          "correctAnswer": "Blogging",
+          "wrongAnswer1": "FTP",
+          "wrongAnswer2": "Telenet",
+          "wrongAnswer3": "Gopher",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "A network designed to allow communication within an organization is called:",
+          "correctAnswer": "Yahoo",
+          "wrongAnswer1": "Google Chat",
+          "wrongAnswer2": "Intranet",
+          "wrongAnswer3": "WWW",
+          "questionDifficulty": 2
         }
       ]
     },
@@ -66,28 +178,84 @@
       "categoryUsage": 0,
       "questionList": [
         {
-          "questionText": "ccccccc?",
-          "correctAnswer": "acc",
-          "wrongAnswer1": "abbbccc",
-          "wrongAnswer2": "adbbbccc",
-          "wrongAnswer3": "cc",
+          "questionText": "Which river flows through Paris??",
+          "correctAnswer": "Seine",
+          "wrongAnswer1": "Nile",
+          "wrongAnswer2": "Danube",
+          "wrongAnswer3": "Ganges",
           "questionDifficulty": 1
         },
         {
-          "questionText": "cccccccc?",
-          "correctAnswer": "ccc",
-          "wrongAnswer1": "scs",
-          "wrongAnswer2": "sccc",
-          "wrongAnswer3": "sdcccc",
+          "questionText": "What is Europe’s largest port?",
+          "correctAnswer": "Port of Rotterdam",
+          "wrongAnswer1": "Port of Dalian",
+          "wrongAnswer2": "Port of Mangalia",
+          "wrongAnswer3": "Port of Odessa",
           "questionDifficulty": 2
         },
         {
-          "questionText": "Black Sea?",
-          "correctAnswer": "NO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-          "wrongAnswer1": "mOUNTAIN",
-          "wrongAnswer2": "Next question...",
-          "wrongAnswer3": "Why not?",
+          "questionText": "In which country is the UK’s highest mountain, Ben Nevis?",
+          "correctAnswer": "Scotland",
+          "wrongAnswer1": "UK",
+          "wrongAnswer2": "Germany",
+          "wrongAnswer3": "France",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "Mount Vesuvius overlooks which modern Italian city?",
+          "correctAnswer": "Naples",
+          "wrongAnswer1": "Florence",
+          "wrongAnswer2": "Venice",
+          "wrongAnswer3": "Rome",
           "questionDifficulty": 3
+        },
+        {
+          "questionText": "Of which country is Sofia the capital?",
+          "correctAnswer": "Bulgaria",
+          "wrongAnswer1": "Turkey",
+          "wrongAnswer2": "Germany",
+          "wrongAnswer3": "France",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "Apart from Dutch and French, what is the other official language of Belgium?",
+          "correctAnswer": "German",
+          "wrongAnswer1": "English",
+          "wrongAnswer2": "French",
+          "wrongAnswer3": "Romanian",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "Which river forms part of the boundary between Mexico and the United States?",
+          "correctAnswer": "Rio Grande",
+          "wrongAnswer1": "Mississippi River",
+          "wrongAnswer2": "Ohio River",
+          "wrongAnswer3": "Dakota Creek",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "What is the longest river flowing in India?",
+          "correctAnswer": "Ganges",
+          "wrongAnswer1": "Punarbhaba",
+          "wrongAnswer2": "Bagmati",
+          "wrongAnswer3": "Gumti",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "What does each star on the flag of the United States stand for?",
+          "correctAnswer": "A state",
+          "wrongAnswer1": "A city",
+          "wrongAnswer2": "A river",
+          "wrongAnswer3": "Freedom",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "Which country is Luxembourg the capital of?",
+          "correctAnswer": "Luxembourg",
+          "wrongAnswer1": "UK",
+          "wrongAnswer2": "Germany",
+          "wrongAnswer3": "France",
+          "questionDifficulty": 1
         }
       ]
     },
@@ -96,28 +264,84 @@
       "categoryUsage": 0,
       "questionList": [
         {
-          "questionText": "Basescu?",
-          "correctAnswer": "acc",
-          "wrongAnswer1": "Neah",
-          "wrongAnswer2": "adbbbccc",
-          "wrongAnswer3": "cc",
+          "questionText": "In what year did Christopher Columbus land in North America?",
+          "correctAnswer": "1492",
+          "wrongAnswer1": "1552",
+          "wrongAnswer2": "1332",
+          "wrongAnswer3": "1997",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "In ancient Egypt, people shaved their eyebrows when this animal died: ",
+          "correctAnswer": "cat",
+          "wrongAnswer1": "dog",
+          "wrongAnswer2": "lobster",
+          "wrongAnswer3": "ox",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "What is not one of the 7 Wonders of the Ancient World?",
+          "correctAnswer": "The Island of Atlantis",
+          "wrongAnswer1": "The Temple of Artemis",
+          "wrongAnswer2": "Statue of Zeus at Olympia",
+          "wrongAnswer3": "Lighthouse of Alexandria",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "Ancient Egypt was conquered in 30 B.C. by which Empire?",
+          "correctAnswer": "Roman",
+          "wrongAnswer1": "Mongolian",
+          "wrongAnswer2": "Greek",
+          "wrongAnswer3": "Achaemenid",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "Henry VIII married this amount of times:",
+          "correctAnswer": "6",
+          "wrongAnswer1": "8",
+          "wrongAnswer2": "5",
+          "wrongAnswer3": "3",
           "questionDifficulty": 2
         },
         {
-          "questionText": "aRE YOU talking TO Me?",
-          "correctAnswer": "ccc",
-          "wrongAnswer1": "SIFILIS",
-          "wrongAnswer2": "sccc",
-          "wrongAnswer3": "Hitler",
+          "questionText": "Roman Emperor Caligula made his ____ an official Senator.",
+          "correctAnswer": "horse",
+          "wrongAnswer1": "cat",
+          "wrongAnswer2": "son",
+          "wrongAnswer3": "friend",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "What's the name of the first western explorer to reach China?",
+          "correctAnswer": "Marco Polo",
+          "wrongAnswer1": "Sir Walter Raleigh",
+          "wrongAnswer2": "Ferdinand Magellan",
+          "wrongAnswer3": "None of the above",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "The Bubonic Plague ravaged Europe in this century: ",
+          "correctAnswer": "14th",
+          "wrongAnswer1": "13th",
+          "wrongAnswer2": "12th",
+          "wrongAnswer3": "9th",
           "questionDifficulty": 3
         },
         {
-          "questionText": "PSD?",
-          "correctAnswer": "N",
-          "wrongAnswer1": "U",
-          "wrongAnswer2": "...",
-          "wrongAnswer3": "Why not?",
-          "questionDifficulty": 1
+          "questionText": "Which country did the Magna Carta originate in? ",
+          "correctAnswer": "England",
+          "wrongAnswer1": "Spain",
+          "wrongAnswer2": "Italy",
+          "wrongAnswer3": "France",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "What was Mickey Mouse originally called?",
+          "correctAnswer": "Mortimer Mouse",
+          "wrongAnswer1": "Martin Mouse",
+          "wrongAnswer2": "Keith Mouse",
+          "wrongAnswer3": "Michael Mouse",
+          "questionDifficulty": 3
         }
       ]
     },
@@ -126,29 +350,86 @@
       "categoryUsage": 0,
       "questionList": [
         {
-          "questionText": "To be or not to be?",
-          "correctAnswer": "acc",
-          "wrongAnswer1": "This is the correct answer!",
-          "wrongAnswer2": "adbbbccc",
-          "wrongAnswer3": "cc",
+          "questionText": "The thief was sent to __ prison",
+          "correctAnswer": "the",
+          "wrongAnswer1": "a",
+          "wrongAnswer2": "an",
+          "wrongAnswer3": "no article",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "Which of the following is a verb in its infinitive form?",
+          "correctAnswer": "To run",
+          "wrongAnswer1": "Running",
+          "wrongAnswer2": "Will run",
+          "wrongAnswer3": "Ran",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "What kind of sentence ends in a question mark?",
+          "correctAnswer": "Interrogative",
+          "wrongAnswer1": "Exclamatory",
+          "wrongAnswer2": "Declarative",
+          "wrongAnswer3": "Imperative",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "George hurt his head while he __.",
+          "correctAnswer": "was ice skating",
+          "wrongAnswer1": "ice skates",
+          "wrongAnswer2": "ice skated",
+          "wrongAnswer3": "had ice skated",
           "questionDifficulty": 2
         },
         {
-          "questionText": "Is this a question?",
-          "correctAnswer": "Banana",
-          "wrongAnswer1": "Cucumber",
-          "wrongAnswer2": "Next question...",
-          "wrongAnswer3": "Why not?",
+          "questionText": "Max ___ for the CIA since 1992.",
+          "correctAnswer": "has been working",
+          "wrongAnswer1": "will work",
+          "wrongAnswer2": "works",
+          "wrongAnswer3": "is working",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "The last time I ____ to Korea, I spent three weeks on Cheju island.",
+          "correctAnswer": "went",
+          "wrongAnswer1": "have gone",
+          "wrongAnswer2": "was going",
+          "wrongAnswer3": "will go",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "Before Jack arrived, Jill ____ up the hill.",
+          "correctAnswer": "had already gone",
+          "wrongAnswer1": "has already gone",
+          "wrongAnswer2": "is already going",
+          "wrongAnswer3": "was going",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "It ____ every day since I arrived here.",
+          "correctAnswer": "has rained",
+          "wrongAnswer1": "rains",
+          "wrongAnswer2": "will rain",
+          "wrongAnswer3": "rained",
           "questionDifficulty": 3
         },
         {
-          "questionText": "dsdfdhsh?",
-          "correctAnswer": "Banana",
-          "wrongAnswer1": "Cucumber",
-          "wrongAnswer2": "Next question...",
-          "wrongAnswer3": "Why not?",
-          "questionDifficulty": 1
+          "questionText": "What word has no plural?",
+          "correctAnswer": "Money",
+          "wrongAnswer1": "Car",
+          "wrongAnswer2": "Dog",
+          "wrongAnswer3": "Triangle",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "'Tense' is a grammatical category that applies to: ",
+          "correctAnswer": "verbs",
+          "wrongAnswer1": "adverbs",
+          "wrongAnswer2": "nouns",
+          "wrongAnswer3": "adjectives",
+          "questionDifficulty": 3
         }
+
       ]
     },
     {
@@ -156,28 +437,84 @@
       "categoryUsage": 0,
       "questionList": [
         {
-          "questionText": "What is ligma?",
-          "correctAnswer": "acc",
-          "wrongAnswer1": "Cancer",
-          "wrongAnswer2": "adbbbccc",
-          "wrongAnswer3": "cc",
+          "questionText": "Which of these units is most suitable for measuring the length of a cell?",
+          "correctAnswer": "Micrometre",
+          "wrongAnswer1": "Metre",
+          "wrongAnswer2": "Kilometre",
+          "wrongAnswer3": "Centrimetre",
           "questionDifficulty": 3
         },
         {
-          "questionText": "?",
-          "correctAnswer": "Da",
-          "wrongAnswer1": "scs",
-          "wrongAnswer2": "sccc",
-          "wrongAnswer3": "NU",
+          "questionText": "Plants receive their nutrients mainly from: ",
+          "correctAnswer": "Soil",
+          "wrongAnswer1": "Atmosphere",
+          "wrongAnswer2": "Light",
+          "wrongAnswer3": "Air",
           "questionDifficulty": 1
         },
         {
-          "questionText": "Is this a potato?",
-          "correctAnswer": "Banana",
-          "wrongAnswer1": "Cucumber",
-          "wrongAnswer2": "Next question...",
-          "wrongAnswer3": "Why not?",
+          "questionText": "A person who studies biology is known as a?",
+          "correctAnswer": "Biologist",
+          "wrongAnswer1": "Scientist",
+          "wrongAnswer2": "Physician",
+          "wrongAnswer3": "None of the above",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "Aspirin comes from which of the following?",
+          "correctAnswer": "Willow bark",
+          "wrongAnswer1": "Oak tree",
+          "wrongAnswer2": "Acacia",
+          "wrongAnswer3": "Eucalyptus",
           "questionDifficulty": 2
+        },
+        {
+          "questionText": "Carrot is orange in color because?",
+          "correctAnswer": "It contains carotene",
+          "wrongAnswer1": "It grows in the soil",
+          "wrongAnswer2": "It is not exposed to sunlight",
+          "wrongAnswer3": "The entire plant is orange in color",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "The rarest blood group is: ",
+          "correctAnswer": "AB negative",
+          "wrongAnswer1": "B negative",
+          "wrongAnswer2": "AB positive",
+          "wrongAnswer3": "O negative",
+          "questionDifficulty": 3
+        },
+        {
+          "questionText": "The metal present in the haemoglobin is: ",
+          "correctAnswer": "Iron",
+          "wrongAnswer1": "Copper",
+          "wrongAnswer2": "Calcium",
+          "wrongAnswer3": "Aluminium",
+          "questionDifficulty": 2
+        },
+        {
+          "questionText": "The longest and largest bone in the human body is: ",
+          "correctAnswer": "Femur",
+          "wrongAnswer1": "Spinal Cord",
+          "wrongAnswer2": "Humerus",
+          "wrongAnswer3": "Fibula",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "What is the Ph value of human blood?",
+          "correctAnswer": "7.40",
+          "wrongAnswer1": "7",
+          "wrongAnswer2": "0",
+          "wrongAnswer3": "8",
+          "questionDifficulty": 1
+        },
+        {
+          "questionText": "The important sugar in honey is: ",
+          "correctAnswer": "Fructose",
+          "wrongAnswer1": "Lactose",
+          "wrongAnswer2": "Maltose",
+          "wrongAnswer3": "Sucrose",
+          "questionDifficulty": 3
         }
       ]
     }
