@@ -106,7 +106,7 @@
         {
           "questionText": "aRE YOU talking TO Me?",
           "correctAnswer": "ccc",
-          "wrongAnswer1": "scs",
+          "wrongAnswer1": "SIFILIS",
           "wrongAnswer2": "sccc",
           "wrongAnswer3": "Hitler",
           "questionDifficulty": 3
@@ -181,5 +181,5 @@
         }
       ]
     }
-      ]
-    }
+  ]
+}
