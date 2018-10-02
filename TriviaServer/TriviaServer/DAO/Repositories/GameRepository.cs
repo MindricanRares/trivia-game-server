@@ -21,6 +21,7 @@ namespace TriviaServer.DAO.Repositories
         {
             if (_context.Games.Where(a => a.UniqueKey == game.UniqueKey).FirstOrDefault() == null)
             {
+                game.IsActive = true;
                 _context.Games.Add(game);
                 _context.SaveChanges();
             }
@@ -41,7 +42,8 @@ namespace TriviaServer.DAO.Repositories
             var game = _context.Games.SingleOrDefault(x => x.GameId == id);
             if(game != null)
             {
-                _context.Games.Remove(game);
+                game.IsActive = false;
+                Edit(game);
                 _context.SaveChanges();
             }
             else
@@ -52,7 +54,7 @@ namespace TriviaServer.DAO.Repositories
 
         public IEnumerable<Game> GetGames()
         {
-            var games = _context.Games.ToList();
+            var games = _context.Games.Where(a => a.IsActive).ToList();
             if(games.Count > 0)
             {
                 return games;
@@ -69,7 +71,7 @@ namespace TriviaServer.DAO.Repositories
             {
                 return null;
             }
-            var game = _context.Games.SingleOrDefault(p => p.GameId == id);
+            var game = _context.Games.Where(p => p.GameId == id).FirstOrDefault(a => a.IsActive);
             if (game != null)
             {
                 return game;
@@ -82,7 +84,7 @@ namespace TriviaServer.DAO.Repositories
 
         public int GetGameroomIdByUniqueKey(int uniqueKey)
         {
-            int? gameRoomId = _context.Games.Where(a => a.UniqueKey == uniqueKey).FirstOrDefault().GameId;
+            int? gameRoomId = _context.Games.Where(a => a.UniqueKey == uniqueKey).FirstOrDefault(a => a.IsActive).GameId;
             if (gameRoomId != null)
             {
                 return gameRoomId.Value;
@@ -95,7 +97,7 @@ namespace TriviaServer.DAO.Repositories
 
         public int GetUniqueKeyByGameroomId(int gameRoomId)
         {
-            int? uniqueKey = _context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault().UniqueKey;
+            int? uniqueKey = _context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault(a => a.IsActive).UniqueKey;
             if (uniqueKey != null)
             {
                 return uniqueKey.Value;
@@ -109,7 +111,7 @@ namespace TriviaServer.DAO.Repositories
         public List<PlayerScore> GetPlayerAndScoreByUniqueKey(int uniqueKey)
         {
             int gameRoomId = GetGameroomIdByUniqueKey(uniqueKey);
-            if (_context.Games.Where(a => a.GameId == gameRoomId).SingleOrDefault() != null)
+            if (_context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault(a => a.IsActive) != null)
             {
                 var players = new List<PlayerScore>();
                 _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
@@ -126,7 +128,7 @@ namespace TriviaServer.DAO.Repositories
         public List<PlayerName> GetPlayersByUniqueKey(int uniqueKey)
         {
             int gameRoomId = GetGameroomIdByUniqueKey(uniqueKey);
-            if (_context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault() != null)
+            if (_context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault(a => a.IsActive) != null)
             {
                 var players = new List<PlayerName>();
                 _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
@@ -143,7 +145,7 @@ namespace TriviaServer.DAO.Repositories
         {
             int gameRoomId = GetGameroomIdByUniqueKey(uniqueKey);
             var games = GetGames();
-            if (_context.Games.Where(a => a.GameId == gameRoomId).SingleOrDefault() != null)
+            if (_context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault(a => a.IsActive) != null)
             {
                 double sum = 0;
                 _context.Players.Where(a => a.GameroomId == gameRoomId).ToList()
@@ -161,7 +163,7 @@ namespace TriviaServer.DAO.Repositories
         {
             int gameRoomId = GetGameroomIdByUniqueKey(uniqueKey);
             var games = GetGames();
-            if (_context.Games.Where(a => a.GameId == gameRoomId).SingleOrDefault() != null)
+            if (_context.Games.Where(a => a.GameId == gameRoomId).FirstOrDefault(a => a.IsActive) != null)
             {
                 var questions = new List<QuestionAnswers>();
                 var categories = new List<Category>();
