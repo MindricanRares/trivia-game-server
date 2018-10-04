@@ -64,10 +64,10 @@ namespace TriviaServer
             {
                 app.UseHsts();
             }
-           // app.UseMvc(ConfigureRoutes);
-
-            app.UseHttpsRedirection();
+            // app.UseMvc(ConfigureRoutes);
             app.UseCors("AllowAll");
+            app.UseHttpsRedirection();
+       
             app.UseMvc();
            
         }

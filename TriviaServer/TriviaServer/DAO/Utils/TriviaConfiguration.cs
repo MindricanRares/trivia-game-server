@@ -14,7 +14,7 @@ namespace TriviaServer.DAO.Utils
         private TriviaConfiguration()
         {
             var configurationBuilder = new ConfigurationBuilder()
-               .AddJsonFile("C:/Git/trivia-game-server/TriviaServer/TriviaServer/appsettings.json")
+               .AddJsonFile("C:/Users/MP063341/Documents/Git/trivia-game-server/TriviaServer/TriviaServer/appsettings.json")
                .AddEnvironmentVariables();
             myConfiguration = configurationBuilder.Build();
         }
